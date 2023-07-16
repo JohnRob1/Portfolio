@@ -1,0 +1,50 @@
+.nav {
+    background-color: white;
+    min-width: 100vw;
+    height: 5vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.nav a {
+    font-size: 3vw;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 550px) {
+    .nav a {
+        font-size: 16px;
+    }
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profilePic {
+    max-width: 25vw;
+}
+
+/*Container for Name and Objective*/
+.nameAndObj {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    font-size: 8vw;
+    justify-content: center;
+}
+
+.objective {
+    font-size: 4vw;
+    justify-content: center;
+}
