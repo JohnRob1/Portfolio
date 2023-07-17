@@ -72,4 +72,4 @@ const sectionContent = [{
             picture: ""
         }
     }
-}]
+}
