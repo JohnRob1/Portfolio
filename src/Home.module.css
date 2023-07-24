@@ -29,6 +29,9 @@
 
 .profilePic {
     max-width: 25vw;
+    border-radius: 30px;
+    margin: 20px;
+    box-shadow: 5px 5px 5px black;
 }
 
 /*Container for Name and Objective*/
@@ -42,9 +45,11 @@
 .name {
     font-size: 8vw;
     justify-content: center;
+    color: white;
 }
 
 .objective {
     font-size: 4vw;
     justify-content: center;
+    color: white;
 }

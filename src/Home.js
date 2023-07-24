@@ -24,23 +24,23 @@ function ProfilePicture() {
 
 function Name() {
     return (
-        <div className={styles.name}>
+        <h1 className={styles.name}>
             John Robinson
-        </div>
+        </h1>
     );
 }
 
 function Objective() {
     return (
-        <div className={styles.objective}>
+        <p className={styles.objective}>
             Software Engineering!
-        </div>
+        </p>
     );
 }
 
 export default function Home() {
     return (
-        <section>
+        <div>
             <NavBar />
             <div className={styles.intro}>
                 <ProfilePicture />
@@ -49,6 +49,6 @@ export default function Home() {
                     <Objective/>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }

@@ -1,75 +1,112 @@
+import purduePic from "./purdue_logo.png"
+import ivyPic from "./ivytech_logo.png"
+import bsuPic from "./bsu_logo.png";
+import dhsPic from "./dhs_logo.jpg";
+import styles from "./Sections.module.css"
 export default function Sections() {
-    return sectionContent.map(section =>
-        <div>
-            <SectionHeader title={section.title}/>
-            {section.map(subSection =>
-                <div>
-                    <Section
-                        title={subSection.title}
-                        description={subSection.description}
-                        picture={subSection.picture}
-                    />
-                </div>
+    return(
+        sectionContent.map((section, index) =>
+            <Section
+                title={section.title}
+                section={section}
+            />
+        )
+    );
+}
+
+function Section({title, section}) {
+    return (
+        <div className={styles.section}>
+            <h1 className={styles.header}>
+                {title}
+            </h1>
+            {section.content.map((subSection, index) =>
+                <SectionContent key={index}
+                         title={subSection.title}
+                         description={subSection.description}
+                         picture={subSection.picture}
+                />
             )}
         </div>
     );
 }
 
-function SectionHeader({title}) {
+function SectionContent({title, description, picture}) {
     return (
-        <div style={styles.sectionHeader}>
-            {title}
+        <div className={styles.item}>
+            <img className={styles.itemPicture} alt="TitlePic" src={picture}></img>
+            <div className={styles.itemTitleAndDescriptionDiv}>
+                <h3 className={styles.title}>{title}</h3>
+                <p className={styles.description}>{description}</p>
+            </div>
         </div>
     );
 }
 
-function Section({title, description, picture}) {
-    return (
-        <div style={styles.description}>
-            <img style={styles.picture} alt="Title" src={picture}></img>
-            <h2 style={styles.title}>{title}</h2>
-            {description}
-        </div>
-    );
-}
-
-let styles = {
-    description: {},
-    picture: {},
-    title: {},
-    sectionHeader: {}
-}
-
-const sectionContent = [{
-    education: {
+const sectionContent = [
+    {
         title: "Education",
-
-        purdue: {
-            title: "Purdue",
-            description: "",
-            picture: ""
-        },
-
-        ivyTech: {
-            title: "IvyTech",
-            description: "",
-            picture: ""
-        },
-
-        delta: {
-            title: "Delta High School",
-            description: "",
-            picture: ""
-        }
+        content: [
+            {
+                title: "Purdue University",
+                description: "Bachelor of Science in Computer Science, Class of 2024",
+                picture: purduePic,
+                details: ""
+            },
+            {
+                title: "IvyTech",
+                description: "",
+                picture: ivyPic,
+                details: ""
+            },
+            {
+                title: "Ball State University",
+                description: "",
+                picture: bsuPic,
+                details: "",
+            },
+            {
+                title: "Delta High School",
+                description: "",
+                picture: dhsPic,
+                details: ""
+            }
+        ]
     },
 
-    creations: {
+    {
         title: "Creations",
+        content: [
+            {
+                title: "JudgeMe",
+                description: "",
+                picture: "",
+                details: ""
+            },
+            {
+                title: "My Notion Templates",
+                description: "",
+                picture: "",
+                details: ""
+            },
+            {
+                title: "This Resume Website",
+                description: "",
+                picture: "",
+                details: ""
+            }
+        ]
+    },
 
-        judgeMe: {
-            title: "JudgeMe",
-            description: "",
-            picture: ""
-        }
+    {
+        title: "Experience",
+        content: [
+            {
+                title: "Fisher Packing",
+                description: "",
+                picture: "",
+                details: ""
+            }
+        ]
     }
-}]
+]
