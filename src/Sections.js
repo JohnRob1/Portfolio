@@ -1,8 +1,9 @@
-import purduePic from "./purdue_logo.png"
-import ivyPic from "./ivytech_logo.png"
-import bsuPic from "./bsu_logo.png";
-import dhsPic from "./dhs_logo.jpg";
+import purduePic from "../assets/purdue_logo.png"
+import ivyPic from "../assets/ivytech_logo.png"
+import bsuPic from "../assets/bsu_logo.png";
+import dhsPic from "../assets/dhs_logo.jpg";
 import styles from "./Sections.module.css"
+
 export default function Sections() {
     return(
         sectionContent.map((section, index) =>
@@ -14,7 +15,7 @@ export default function Sections() {
     );
 }
 
-function Section({title, section}) {
+function Section({title, section, image}) {
     return (
         <div className={styles.section}>
             <h1 className={styles.header}>

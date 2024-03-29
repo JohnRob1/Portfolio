@@ -1,5 +1,5 @@
 import styles from './Home.module.css';
-import ProfilePic from './ProfilePic.jpeg';
+import ProfilePic from '../assets/ProfilePic.jpeg';
 
 function NavBar() {
     //Make an if statement to prepare for small screens
