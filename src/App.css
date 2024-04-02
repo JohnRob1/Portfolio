@@ -3,7 +3,14 @@
 }
 
 .App header {
-    background-color: royalblue;
+    /*Wood background option*/
+    /*background-image: url("./assets/lukas-blazek.jpg");*/
+    /*background-size: cover;*/
+
+    /*Gradient background option*/
+    background: linear-gradient(45deg, saddlebrown, burlywood);
+
+    font-family: "Georgia", serif;
     min-height: 100vh;
     display: flex;
 }
