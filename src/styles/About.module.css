@@ -1,0 +1,12 @@
+.profilePic {
+    max-width: 25vw;
+    border-radius: 30px;
+    margin: 20px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.objective {
+    font-size: 4vw;
+    justify-content: center;
+    color: white;
+}
