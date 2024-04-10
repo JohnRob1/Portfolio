@@ -1,7 +1,5 @@
 .container { /*Contains name, navAndTimeline*/
     padding-left: 20px;
-    height: 100%;
-    width: 100%;
 }
 
 .timeAndNav {
@@ -16,15 +14,15 @@
 
 .nav {
     width: 50%;
-    height: 100vh;
+    height: 20vw;
     overflow: hidden;
-    display: grid;
+    display: inline grid;
+    align-content: space-evenly;
+    align-self: center;
 }
 
 .nav a {
     font-size: 3vw;
-    padding-left: 2%;
-    padding-right: 2%;
 }
 
 @media screen and (min-width: 550px) {

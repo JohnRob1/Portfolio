@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.css';
 import Timeline from './Timeline';
 
 function NavBar() {
-    //Make an if statement to prepare for small screens
     return (
         <div className={styles.nav}>
             <a href="">Home</a>
@@ -13,7 +12,6 @@ function NavBar() {
         </div>
     );
 }
-
 
 export default function Home() {
     return (

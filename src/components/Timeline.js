@@ -15,7 +15,7 @@ const initialNodes = [
     {
         id: '2',
         data: { label: 'August 2020' },
-        position: { x: 0, y: 0 },
+        position: { x: 0, y: 100 },
     },
 ];
 
