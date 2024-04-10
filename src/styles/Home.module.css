@@ -1,15 +1,21 @@
 .container { /*Contains name, navAndTimeline*/
+    padding-left: 20px;
+    height: 100%;
+    width: 100%;
 }
 
-.navAndTimeline { /*Container for navbar and timeline*/
+.timeAndNav {
+    display: flex;
+    width: 40vw;
 }
 
 .timeline {
-    min-width: 20vw;
+    width: 50%;
+    height: 100vw;
 }
 
 .nav {
-    min-width: 20vw;
+    width: 50%;
     height: 100vh;
     overflow: hidden;
     display: grid;
@@ -28,7 +34,7 @@
 }
 
 .name {
-    font-size: 5vw;
+    font-size: min(5vw, 75px);
     justify-content: center;
     color: black;
 }

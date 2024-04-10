@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css';
-import ProfilePic from '../assets/ProfilePic.jpeg';
+import Timeline from './Timeline';
 
 function NavBar() {
     //Make an if statement to prepare for small screens
@@ -14,13 +14,6 @@ function NavBar() {
     );
 }
 
-function Timeline() {
-    return (
-        <div className={styles.timeline}>
-
-        </div>
-    )
-}
 
 export default function Home() {
     return (
@@ -28,7 +21,7 @@ export default function Home() {
             <h1 className={styles.name}>
                 John Robinson
             </h1>
-            <div className={styles.navAndTimeline}>
+            <div className={styles.timeAndNav}>
                 <Timeline />
                 <NavBar />
             </div>
