@@ -3,13 +3,13 @@ import Timeline from './Timeline';
 
 function NavBar() {
     return (
-        <div className={styles.nav}>
-            <a href="">Home</a>
-            <a href="">Education</a>
-            <a href="">Experiences</a>
-            <a href="">Creations</a>
-            <a href="">Contact</a>
-        </div>
+        <ul className={styles.nav}>
+            <li><a className={styles.active} href="#home">Home</a></li>
+            <li><a href="#eduction">Education</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#creations">Creations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     );
 }
 
@@ -17,7 +17,7 @@ export default function Home() {
     return (
         <div className={styles.container}>
             <h1 className={styles.name}>
-                John Robinson
+                JOHN ROBINSON
             </h1>
             <div className={styles.timeAndNav}>
                 <Timeline />
