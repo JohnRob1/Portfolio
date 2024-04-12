@@ -1,3 +1,10 @@
+:root {
+    --primary: #020f14;
+    --secondary: #677189;
+    --tertiary: #e2e2e2;
+    --accent: #bd7418;
+}
+
 .App {
     text-align: center;
 }
@@ -7,8 +14,7 @@
     /*background-image: url("./assets/lukas-blazek.jpg");*/
     /*background-size: cover;*/
 
-
-    background-color: #020f14;
+    background-color: var(--primary);
     font-family: "Georgia", serif;
     min-height: 100vh;
     display: flex;
