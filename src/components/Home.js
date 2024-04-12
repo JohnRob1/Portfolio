@@ -5,6 +5,7 @@ function NavBar() {
     return (
         <ul className={styles.nav}>
             <li><a className={styles.active} href="#home">Home</a></li>
+            <li><a href="#eduction">Education</a></li>
             <li><a href="#experiences">Experiences</a></li>
             <li><a href="#creations">Creations</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -15,11 +16,11 @@ function NavBar() {
 export default function Home() {
     return (
         <div className={styles.container}>
-            <div className={styles.name}>
+            <h1 className={styles.name}>
                 JOHN ROBINSON
-            </div>
+            </h1>
             <div className={styles.timeAndNav}>
-                {/*<Timeline />*/}
+                <Timeline />
                 <NavBar />
             </div>
         </div>
