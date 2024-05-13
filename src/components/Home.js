@@ -19,7 +19,6 @@ export default function Home() {
                 JOHN ROBINSON
             </div>
             <div className={styles.timeAndNav}>
-                {/*<Timeline />*/}
                 <NavBar />
             </div>
         </div>

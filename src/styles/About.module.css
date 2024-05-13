@@ -1,12 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
 .profilePic {
-    max-width: 25vw;
+    max-width: 20vw;
     border-radius: 30px;
     margin: 20px;
     box-shadow: 5px 5px 5px black;
 }
 
 .objective {
-    font-size: 4vw;
+    font-size: 3vw;
     justify-content: center;
     color: white;
+}
+
+@media screen and (min-width: 1500px) {
+    .objective {
+        text-align: left;
+        font-size: 2vw;
+    }
+
+    .container {
+        justify-content: left;
+        max-width: 75%;
+    }
 }
