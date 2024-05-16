@@ -12,6 +12,7 @@ function App() {
             <section>
                 <div className="content">
                     <About />
+                    <Experiences />
                 </div> 
                 <Home />
             </section>

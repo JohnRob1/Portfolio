@@ -1,5 +1,6 @@
-.container { /*Contains name, timeAndNav*/
-    padding-right: 15px;
+.container {
+    /*Contains name, timeAndNav*/
+    padding: 10px;
 }
 
 .timeAndNav {
@@ -52,12 +53,4 @@
         padding: 5px;
         width: auto;
     }
-}
-
-.name {
-    font-size: min(7.5vw, 50px);
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: var(--tertiary);
-    padding-top: 10px;
 }

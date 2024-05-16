@@ -1,0 +1,45 @@
+.container {}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.titleAndDateContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titleAndDateStyle {
+    color: var(--secondary);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.descr {
+    color: var(--tertiary);
+    text-align: left;
+    font-size: 20px;
+}
+
+.pictures {
+    display: none;
+    flex-direction: row;
+}
+
+.tile:hover .pictures {
+    display: flex;
+}
+
+@media screen and (max-width: 650px) {
+    .titleAndDateStyle {
+        font-size: 3vw;
+        font-weight: bold;
+    }
+
+    .descr {
+        font-size: 2vw;
+    }
+}

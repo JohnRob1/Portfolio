@@ -1,4 +1,5 @@
 import styles from '../styles/Home.module.css';
+import global from '../styles/Global.module.css';
 import Timeline from './Timeline';
 
 function NavBar() {
@@ -15,7 +16,7 @@ function NavBar() {
 export default function Home() {
     return (
         <div className={styles.container}>
-            <div className={styles.name}>
+            <div className={global.title}>
                 JOHN ROBINSON
             </div>
             <div className={styles.timeAndNav}>

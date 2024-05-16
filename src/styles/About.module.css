@@ -5,17 +5,11 @@
 
 }
 
-.profilePic {
-    max-width: 20vw;
-    border-radius: 30px;
-    margin: 20px;
-    box-shadow: 5px 5px 5px black;
-}
-
 .objective {
-    font-size: 3vw;
+    font-size: 2.5vw;
     justify-content: center;
-    color: white;
+    color: var(--tertiary);
+    padding: 20px;
 }
 
 @media screen and (min-width: 1500px) {
