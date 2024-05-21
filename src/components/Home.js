@@ -1,15 +1,34 @@
 import styles from '../styles/Home.module.css';
 import global from '../styles/Global.module.css';
-import Timeline from './Timeline';
+import { SocialIcon } from 'react-social-icons';
 
 function NavBar() {
     return (
-        <ul className={styles.nav}>
-            <li><a className={styles.active} href="#home">Home</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#creations">Creations</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div className={styles.navContainer}>
+            <ul className={styles.nav}>
+                <li><a className={styles.active} href="#About">About</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#creations">Creations</a></li>
+            </ul>
+        </div>
+    );
+}
+
+function Contact() {
+    return (
+        <>
+            <div className={styles.socialsContainer}>
+                <SocialIcon 
+                    style={{ height: 30, width: 30, margin: 5 }}
+                    url="mailto:jrobinson6114@gmail.com" />
+                <SocialIcon 
+                    style={{ height: 30, width: 30, margin: 5 }}
+                    url="https://www.linkedin.com/in/JohnRob1/"/>
+                <SocialIcon 
+                    style={{ height: 30, width: 30, margin: 5 }}
+                    url="https://github.com/JohnRob1" />
+            </div>
+        </>
     );
 }
 
@@ -19,9 +38,8 @@ export default function Home() {
             <div className={global.title}>
                 JOHN ROBINSON
             </div>
-            <div className={styles.timeAndNav}>
-                <NavBar />
-            </div>
+            <Contact />
+            <NavBar />
         </div>
     );
 }

@@ -2,38 +2,7 @@ import styles from '../styles/Experiences.module.css';
 import global from '../styles/Global.module.css';
 import dannarPic from '../assets/dannarPic.png';
 import fisherPic from '../assets/fisherPic.png';
-
-function Picture({ pic }) {
-    return (
-        <>
-            <img className={global.picture}
-                src={pic}
-                alt='ExperiencePicture'/> 
-        </>
-    );
-
-}
-
-function Tile({ title, date, descr, pictures }) {
-    const pics = pictures.map(
-        pic => <Picture key="{pic}" pic={pic} />
-    );
-
-    return (
-        <div className={styles.tile}>
-            <div className={styles.titleAndDateContainer}>
-                <div className={styles.titleAndDateStyle}>{title}</div>
-                <div className={styles.titleAndDateStyle}>{date}</div>
-            </div>
-            <p className={styles.descr}>
-                {descr}
-            </p>
-            <div className={styles.pictures}>
-                {pics}
-            </div>
-        </div>
-    );
-}
+import Tile from '../components/Tile.js';
 
 export default function Experiences() {
     return (
@@ -42,14 +11,14 @@ export default function Experiences() {
                 EXPERIENCES
             </div>
             <Tile 
-                title={'Software Engineer Intern at Dannar'}
-                date={'June 2024 - August 2024'}
-                descr={'I am going to develop software using IQAN for Dannar!'}
+                title='Software Engineer Intern at Dannar'
+                date='June 2024 - August 2024'
+                descr='I am going to develop software using IQAN for Dannar!'
                 pictures={[dannarPic]}
             />
             <Tile 
-                title={'Software Consultant for Fisher Packing'}
-                date={'May 2023 - August 2023'}
+                title='Software Consultant for Fisher Packing'
+                date='May 2023 - August 2023'
                 descr={'I was responsible for getting all of Fisher Packing\'s ' +
                     'inventory digitalized. This was needed to streamline quality ' +
                     'assurance practices for all of their products. By the end of ' + 

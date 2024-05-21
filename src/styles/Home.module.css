@@ -1,9 +1,27 @@
 .container {
     /*Contains name, timeAndNav*/
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.timeAndNav {
+.contact {
+    height: auto;
+    width: 100%;
+    font-size: min(1.5vw, 20px);
+    color: var(--tertiary);
+    display: flex;
+    flex-direction: column-reverse;
+    text-decoration: none;
+}
+
+.socialsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navContainer {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -11,13 +29,14 @@
 
 .nav {
     width: 100%;
-    height: 800px;
+    height: 50vh;
     display: inline grid;
     align-content: center;
     justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .nav li {
@@ -42,15 +61,16 @@
     background-color: var(--secondary);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 700px) {
     .nav {
         align-self: center;
         height: 200px;
     }
 
     .nav li a {
-        font-size: 4vw;
+        font-size: 3vw;
         padding: 5px;
         width: auto;
+        border-radius: 10px;
     }
 }
