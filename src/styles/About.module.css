@@ -10,10 +10,3 @@
     color: var(--tertiary);
     padding-inline: 20px;
 }
-
-@media screen and (max-width: 350px) {
-    .objective {
-        font-size: 3vw;
-    }
-
-}

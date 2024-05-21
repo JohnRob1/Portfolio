@@ -5,20 +5,20 @@ import Creations from './components/Creations.js';
 import Experiences from './components/Experiences.js';
 
 function App() {
-    return (
-        <div className="App">
-            <header>
-                <section>
-                    <div className="content">
-                        <About />
-                        <Experiences />
-                        <Creations />
-                    </div>
-                    <Home />
-                </section>
-            </header>
-        </div>
-    );
+  return (
+    <div className="App">
+        <header>
+            <section>
+                <div className="content">
+                    <About />
+                    <Experiences />
+                    <Creations />
+                </div> 
+                <Home />
+            </section>
+        </header>
+    </div>
+  );
 }
 
 export default App;
