@@ -1,15 +1,50 @@
-.tile {}
-
-.titleAndDate {}
-
-.title {}
-
-.date {}
-
-.picsAndLinks {}
-
-.pics {
-
+.tile {
+    display: flex;
+    flex-direction: column;
 }
 
-.links {}
+.titleAndDate {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    color: var(--secondary);
+    text-align: left;
+    margin-right: 5px;
+}
+
+.date {
+    color: var(--secondary);
+    text-align: right;
+    margin-left: 5px;
+}
+
+.desc {
+    color: var(--tertiary);
+    text-align: left;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+.picsAndLinks {
+    display: none;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.pics {
+    display: flex;
+    flex-direction: row;
+}
+
+.tile:hover .picsAndLinks {
+    display: flex;
+}
