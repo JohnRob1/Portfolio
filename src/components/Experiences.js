@@ -27,6 +27,21 @@ export default function Experiences() {
                     'and used Google Forms to digitalize the quality assurance logs.'}
                 pics={[fisherPic]}
             />
+            <Tile
+                title='Coaching Wrestling'
+                date='May 2022 - Present'
+                desc='I coach wrestling at Harrison High School.'
+            />
+            <Tile
+                title='Boiler Awakening'
+                date='Fall 2021 - Spring 2024'
+                desc='I am a retreatant and 4-time staffer of Boiler Awakening.'
+            />
+            <Tile
+                title='Ignite'
+                date='Fall 2020 - Fall 2023'
+                desc='I was a member, leader, and coordinator of multiple Ignite groups!'
+            />
         </div>
     );
 }

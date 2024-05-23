@@ -1,6 +1,5 @@
 import styles from '../styles/Tile.module.css';
 import global from '../styles/Global.module.css';
-import React, { useRef } from 'react';
 
 function Picture({ pic }) {
     return (

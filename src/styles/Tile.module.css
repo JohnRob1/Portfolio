@@ -1,6 +1,13 @@
 .tile {
     display: flex;
     flex-direction: column;
+    padding: 10px;
+}
+
+.tile:hover {
+    border: 2px solid var(--accent);
+    padding: 8px;
+    border-radius: 10px;
 }
 
 .titleAndDate {
@@ -27,24 +34,35 @@
 }
 
 .link {
+    color: var(--tertiary);
+    font-size: 15px;
+    border-radius: 5px;
     text-decoration: none;
-    color: var(--accent);
+    padding-inline: 10px;
+    padding-block: 5px;
+    border: 1px solid var(--accent);
+    margin: 5px;
+}
+
+.link:hover {
+    background: var(--accent);
 }
 
 .picsAndLinks {
     display: none;
 }
 
+.tile:hover .picsAndLinks {
+    display: flex;
+}
+
 .links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-content: left;
 }
 
 .pics {
     display: flex;
     flex-direction: row;
-}
-
-.tile:hover .picsAndLinks {
-    display: flex;
 }

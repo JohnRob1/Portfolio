@@ -13,6 +13,20 @@ export default function Creations() {
                 desc='Senior Software Engineering Project at Purdue'
                 links={["Github Repo:https://github.com/JohnRob1/FinanceFriend.git"]}
             />
+            <Tile
+                title='JudgeMe'
+                date='August 2022 - December 2022'
+                desc='Software Engineer Class Project at Purdue'
+                links={["Github Repo:https://github.com/JohnRob1/JudgeMe"]}
+            />
+            <Tile
+                title='MediLingo'
+                date='October 2023'
+                desc='My Project at the PittChallenge Hackathon'
+                links={["Github Repo:https://github.com/JohnRob1/MediLingo",
+                    "DevPost:https://devpost.com/software/medilingo"
+                ]}
+            />
         </>
     );
 }
