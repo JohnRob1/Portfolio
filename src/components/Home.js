@@ -4,13 +4,11 @@ import { SocialIcon } from 'react-social-icons';
 
 function NavBar() {
     return (
-        <div className={styles.navContainer}>
-            <ul className={styles.nav}>
-                <li><a className={styles.active} href="#About">About</a></li>
-                <li><a href="#experiences">Experiences</a></li>
-                <li><a href="#creations">Creations</a></li>
-            </ul>
-        </div>
+        <ul className={styles.nav}>
+            <li><a className={styles.active} href="#About">About</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#creations">Creations</a></li>
+        </ul>
     );
 }
 
@@ -18,13 +16,13 @@ function Contact() {
     return (
         <>
             <div className={styles.socialsContainer}>
-                <SocialIcon 
+                <SocialIcon
                     style={{ height: 30, width: 30, margin: 5 }}
                     url="mailto:jrobinson6114@gmail.com" />
-                <SocialIcon 
+                <SocialIcon
                     style={{ height: 30, width: 30, margin: 5 }}
-                    url="https://www.linkedin.com/in/JohnRob1/"/>
-                <SocialIcon 
+                    url="https://www.linkedin.com/in/JohnRob1/" />
+                <SocialIcon
                     style={{ height: 30, width: 30, margin: 5 }}
                     url="https://github.com/JohnRob1" />
             </div>

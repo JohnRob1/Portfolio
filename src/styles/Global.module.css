@@ -1,13 +1,20 @@
 .picture {
-    height: 20vw;
+    width: min(20vw, 300px);
     border-radius: 20px;
-    margin: 10px;
+    margin: 15px;
 }
 
 .title {
     color: var(--tertiary);
     letter-spacing: 4px;
-    font-size: min(4vw, 50px);
+    font-size: min(6vw, 50px);
     font-weight: bold;
     margin: 5px;
+}
+
+@media screen and (max-width: 650px) {
+    .picture {
+        border-radius: 10px;
+        width: 30vw;
+    }
 }

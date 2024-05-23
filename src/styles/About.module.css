@@ -5,15 +5,8 @@
 }
 
 .objective {
-    font-size: 2.25vw;
+    font-size: min(2vh, 30px);
     justify-content: center;
     color: var(--tertiary);
     padding-inline: 20px;
-}
-
-@media screen and (max-width: 350px) {
-    .objective {
-        font-size: 3vw;
-    }
-
 }

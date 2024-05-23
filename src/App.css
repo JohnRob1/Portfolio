@@ -30,7 +30,7 @@
     max-width: 75%;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 650px) {
     .App section {
         flex-direction: column-reverse;
         justify-content: flex-end;
