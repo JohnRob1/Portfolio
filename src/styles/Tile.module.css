@@ -18,19 +18,24 @@
 
 .title {
     color: var(--secondary);
+    font-size: max(1.5vw, 15px);
     text-align: left;
-    margin-right: 5px;
+    font-weight: bold;
+    width: 45%;
 }
 
 .date {
     color: var(--secondary);
+    font-size: max(1.5vw, 15px);
     text-align: right;
-    margin-left: 5px;
+    font-weight: bold;
+    width: 45%;
 }
 
 .desc {
     color: var(--tertiary);
     text-align: left;
+    font-size: max(1.25vw, 12.5px);
 }
 
 .link {

@@ -5,7 +5,7 @@ import { SocialIcon } from 'react-social-icons';
 function NavBar() {
     return (
         <ul className={styles.nav}>
-            <li><a className={styles.active} href="#About">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#experiences">Experiences</a></li>
             <li><a href="#creations">Creations</a></li>
         </ul>
