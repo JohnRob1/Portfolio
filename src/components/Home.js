@@ -1,5 +1,4 @@
 import styles from '../styles/Home.module.css';
-import global from '../styles/Global.module.css';
 import { SocialIcon } from 'react-social-icons';
 
 function NavBar() {
@@ -33,7 +32,7 @@ function Contact() {
 export default function Home() {
     return (
         <div className={styles.container}>
-            <div className={global.title}>
+            <div className={styles.title}>
                 JOHN ROBINSON
             </div>
             <Contact />

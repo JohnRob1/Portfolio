@@ -1,3 +1,11 @@
+.title {
+    color: var(--tertiary);
+    letter-spacing: 4px;
+    font-size: min(6vw, 50px);
+    font-weight: bold;
+    margin: 5px;
+}
+
 .container {
     padding: 10px;
     height: 100vh;
@@ -40,6 +48,7 @@
 }
 
 .nav li a {
+    transition: 0.3s;
     font-size: 25px;
     width: 175px;
     display: block;
@@ -57,12 +66,12 @@
     .container {
         padding: 5px;
         position: static;
-        height: 25%;
+        height: auto;
     }
 
     .nav {
         align-self: center;
-        height: 25%;
+        height: auto;
         display: flex;
     }
 

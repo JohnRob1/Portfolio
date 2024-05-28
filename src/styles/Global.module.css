@@ -6,10 +6,12 @@
 
 .title {
     color: var(--tertiary);
+    background-color: var(--secondary);
+    border-radius: 5px;
     letter-spacing: 4px;
     font-size: min(6vw, 50px);
     font-weight: bold;
-    margin: 5px;
+    margin-block: 10px;
 }
 
 @media screen and (max-width: 650px) {
