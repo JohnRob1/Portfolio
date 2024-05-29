@@ -1,8 +1,8 @@
-import Tile from './Tiles.js';
+import Tiles from './Tiles.js';
 import global from '../styles/Global.module.css';
 
 export default function Creations() {
-    const tiles = {
+    const content = {
         'FinanceFriend': {
             key: 'financefriend',
             date: 'Fall 2023',
@@ -35,7 +35,6 @@ export default function Creations() {
             desc: 'Using the experience I got in Java from my Object Oriented Programming, I wanted to solve a problem I was facing at my part-time position at Fisher Packing. We were writing all of the lot numbers of ingredients by hand, so I sped up the process with lot-tracker!',
             links: ["Github Repo:https://github.com/JohnRob1/Project5"]
         }
-        // Add more Tile data here...
     };
 
     return (
@@ -43,15 +42,7 @@ export default function Creations() {
             <div className={global.title} id="creations">
                 CREATIONS
             </div>
-            {Object.keys(tiles).map((title) => (
-                <Tile
-                    key={tiles[title].key}
-                    title={title}
-                    date={tiles[title].date}
-                    desc={tiles[title].desc}
-                    links={tiles[title].links}
-                />
-            ))}
+            <Tiles tiles={content} />
         </>
     );
 }
