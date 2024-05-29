@@ -45,10 +45,6 @@
 }
 
 .nav li {
-    padding: 5px;
-}
-
-.nav li a {
     transition: 0.3s;
     font-size: 25px;
     width: 175px;
@@ -57,10 +53,12 @@
     color: var(--tertiary);
     border-radius: 15px;
     padding: 10px;
+    margin-block: 10px;
 }
 
-.nav li a:hover {
+.nav li:hover {
     background-color: var(--secondary);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 650px) {

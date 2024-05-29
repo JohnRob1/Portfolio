@@ -4,9 +4,18 @@ import { SocialIcon } from 'react-social-icons';
 function NavBar() {
     return (
         <ul className={styles.nav}>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experiences">Experiences</a></li>
-            <li><a href="#creations">Creations</a></li>
+            <li onClick={() => (
+                document.getElementById("about").scrollIntoView(
+                    { behavior: "smooth" }
+                ))}>About</li>
+            <li onClick={() => (
+                document.getElementById("experiences").scrollIntoView(
+                    { behavior: "smooth" }
+                ))}>Experiences</li>
+            <li onClick={() => (
+                document.getElementById("creations").scrollIntoView(
+                    { behavior: "smooth" }
+                ))}>Creations</li>
         </ul>
     );
 }

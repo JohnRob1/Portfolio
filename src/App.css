@@ -14,7 +14,6 @@
     /*background-image: url("./assets/lukas-blazek.jpg");*/
     /*background-size: cover;*/
 
-    background-color: var(--primary);
     font-family: "Georgia", serif;
     min-height: 100vh;
     display: flex;
@@ -23,6 +22,8 @@
 .App section {
     display: flex;
     justify-content: space-between;
+    min-height: 100vh;
+    background-color: var(--primary);
 }
 
 .content {

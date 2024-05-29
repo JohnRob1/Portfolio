@@ -9,15 +9,23 @@ export default function Experiences() {
         'Software Engineer Intern at Dannar': {
             key: 'dannar',
             date: 'Summer 2024',
-            desc: 'I am going to develop software using IQAN for Dannar!',
+            desc: 'I will be working alongside a software engineer to help develop software for ' +
+                'Dannar\'s Mobile Power Station!',
             pics: [dannarPic]
         },
         'Software Consultant for Fisher Packing': {
             key: 'fishers',
             date: 'Summer 2023',
-            desc: 'I was responsible for getting all of Fisher Packing\'s inventory digitalized. This was needed to streamline quality assurance practices for all of their products. By the end of summer, I developed an GS1-128 barcode decoding extension for Google Sheets, input all inventory and recipe data into an inventory tracking software, and used Google Forms to digitalize the quality assurance logs.',
+            desc: 'I was responsible for getting all of Fisher Packing\'s inventory digitalized. ' +
+                'This was needed to streamline quality assurance practices for all of their products. ' +
+                'By the end of summer, I developed an GS1-128 barcode decoding extension for Google Sheets, ' +
+                'input all inventory and recipe data into an inventory tracking software, ' +
+                'and used Google Forms to digitalize the quality assurance logs.',
             pics: [fisherPic]
-        },
+        }
+    };
+
+    const unfinished = {
         'Coaching Wrestling': {
             key: 'coaching',
             date: 'May 2022 - Present',
@@ -33,7 +41,7 @@ export default function Experiences() {
             date: 'Fall 2020 - Fall 2023',
             desc: 'I was a member, leader, and coordinator of multiple Ignite groups!'
         }
-    };
+    }
 
     return (
         <div className={styles.container}>
