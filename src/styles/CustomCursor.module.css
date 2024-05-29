@@ -1,0 +1,13 @@
+.cursor {
+    z-index: 900;
+    border-radius: 50%;
+    width: 750px;
+    height: 750px;
+    background: radial-gradient(var(--accent), transparent);
+    opacity: 25%;
+    filter: blur(50px);
+    pointer-events: none;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    position: fixed;
+}

@@ -1,4 +1,5 @@
 import './App.css';
+import CustomCursor from './components/CustomCursor';
 import Home from './components/Home.js';
 import About from './components/About.js';
 import Creations from './components/Creations.js';
@@ -9,6 +10,7 @@ function App() {
         <div className="App">
             <header>
                 <section>
+                    <CustomCursor />
                     <div className="content">
                         <About />
                         <Experiences />
