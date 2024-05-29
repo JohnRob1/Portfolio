@@ -5,7 +5,7 @@
 }
 
 .objective {
-    font-size: min(2vh, 30px);
+    font-size: large;
     justify-content: center;
     color: var(--tertiary);
     padding-inline: 20px;

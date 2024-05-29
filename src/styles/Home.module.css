@@ -1,11 +1,3 @@
-.title {
-    color: var(--tertiary);
-    letter-spacing: 4px;
-    font-size: min(6vw, 50px);
-    font-weight: bold;
-    margin: 5px;
-}
-
 .container {
     z-index: 950;
     padding: 10px;
@@ -13,7 +5,15 @@
     display: flex;
     flex-direction: column;
     position: sticky;
-    top: 5px;
+    top: 0px;
+}
+
+.title {
+    color: var(--tertiary);
+    letter-spacing: 4px;
+    font-size: min(6vw, 50px);
+    font-weight: bold;
+    margin: 5px;
 }
 
 .contact {
@@ -63,9 +63,9 @@
 
 @media screen and (max-width: 650px) {
     .container {
-        padding: 5px;
-        position: static;
         height: auto;
+        background-color: var(--primary);
+        position: static;
     }
 
     .nav {
@@ -74,9 +74,10 @@
         display: flex;
     }
 
-    .nav li a {
-        font-size: 4vw;
+    .nav li {
+        font-size: large;
         padding: 5px;
+        margin-inline: 5px;
         width: auto;
         border-radius: 10px;
     }

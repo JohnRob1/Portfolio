@@ -21,7 +21,7 @@
 
 .title {
     color: var(--secondary);
-    font-size: max(1.5vw, 15px);
+    font-size: large;
     text-align: left;
     font-weight: bold;
     width: 45%;
@@ -29,7 +29,7 @@
 
 .date {
     color: var(--secondary);
-    font-size: max(1.5vw, 15px);
+    font-size: large;
     text-align: right;
     font-weight: bold;
     width: 45%;
@@ -38,7 +38,7 @@
 .desc {
     color: var(--tertiary);
     text-align: left;
-    font-size: max(1.25vw, 12.5px);
+    font-size: medium;
 }
 
 .link {
@@ -69,4 +69,11 @@
 .pics {
     display: flex;
     flex-direction: row;
+}
+
+@media screen and (max-width: 650px) {
+    .tile {
+        padding: 5px;
+        margin-block: 2px;
+    }
 }
