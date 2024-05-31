@@ -1,20 +1,6 @@
 import Tiles from './Tiles.js';
+import * as Images from './Global.js';
 import global from '../styles/Global.module.css';
-import ffDash from '../assets/FF_Dash.png';
-import ffProf from '../assets/FF_Profile.png';
-import ffLoca from '../assets/FF_Location.png';
-import ffSoca from '../assets/FF_Social.png';
-import ffChart from '../assets/CS 407 Project Charter.pdf';
-import ffPlan1 from '../assets/CS407 Sprint 1 Planning Doc.pdf';
-import ffPlan2 from '../assets/CS407 Sprint 2 Planning Doc.pdf';
-import ffPlan3 from '../assets/CS407 Sprint 3 Planning Doc.pdf';
-import ffRetro1 from '../assets/CS407 Sprint 1 Retrospective.pdf';
-import ffRetro2 from '../assets/CS 407 Sprint 2 Retrospective.pdf';
-import ffRetro3 from '../assets/CS 407 Sprint 3 Retrospective.pdf';
-import mediCond from '../assets/medi_conditions.jpg';
-import mediPath from '../assets/medi_graph.jpg';
-import mediQues from '../assets/medi_question.jpg';
-import mediFeti from '../assets/medi_confetti.jpg';
 
 export default function Creations() {
     const content = {
@@ -26,29 +12,30 @@ export default function Creations() {
                 'My contributions to this project were the below features: \n' +
                 '-Account creation\n-Profile management\n-Account dashboard\n-Input spending by location\n' +
                 '-Database management\n-Social media posts\n-Spending goal comments\n',
-            pics: [ffDash, ffProf, ffLoca, ffSoca],
+            pics: [Images.ffDash, Images.ffProf, Images.ffLoca, Images.ffSoca],
             links: [
                 ["Github Repo", "https://github.com/JohnRob1/FinanceFriend.git"],
-                ["Project Charter", ffChart],
-                ["Sprint 1 Plan", ffPlan1],
-                ["Sprint 1 Retrospective", ffRetro1],
-                ["Sprint 2 Plan", ffPlan2],
-                ["Sprint 2 Retrospective", ffRetro2],
-                ["Sprint 3 Plan", ffPlan3],
-                ["Sprint 3 Retrospective", ffRetro3],
+                ["Project Charter", "https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS%20407%20Project%20Charter.pdf"],
+                ["Design Doc", "https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Design%20Doc.pdf"],
+                ["Sprint 1 Plan", "https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Sprint%201%20Planning%20Doc.pdf"],
+                ["Sprint 1 Retrospective", "https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Sprint%201%20Retrospective.pdf"],
+                ["Sprint 2 Plan", "https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Sprint%202%20Planning%20Doc.pdf"],
+                ["Sprint 2 Retrospective", "https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS%20407%20Sprint%202%20Retrospective.pdf"],
+                ["Sprint 3 Plan", "https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Sprint%203%20Planning%20Doc.pdf"],
+                ["Sprint 3 Retrospective", "https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS%20407%20Sprint%203%20Retrospective.pdf"],
             ]
         },
         'MediLingo': {
             key: 'medilingo',
             date: 'October 2023',
             desc: 'My Project at the PittChallenge Hackathon, where my team and I ' +
-                'developed a website using MongoDB, Typescript, Next.js, Node.js, Vite, and Clerk.' +
+                'developed a website using MongoDB, Typescript, Next.js, Node.js, Vite, and Clerk. ' +
                 'Our goal for this website was to educate people about common medical ' +
                 'conditions. My contributions to this project are the graph component ' +
                 'that represents game progress and I made multiple React components that ' +
                 'my teammates were able to use in making the game components. We won the ' +
                 'best use of MongoDB Athlas and the Health Literacy category.',
-            pics: [mediCond, mediPath, mediQues, mediFeti],
+            pics: [Images.mediCond, Images.mediPath, Images.mediQues, Images.mediFeti],
             links: [
                 ["Github Repo", "https://github.com/JohnRob1/MediLingo"],
                 ["DevPost", "https://devpost.com/software/medilingo"]
@@ -58,22 +45,44 @@ export default function Creations() {
             key: 'judgeme',
             date: 'Fall 2022',
             desc: 'For my Software Engineering Class Project at Purdue, my team and I built ' +
-                'a web application using the Django framework (Python) and TailwindCSS.',
-            links: [["Github Repo", "https://github.com/JohnRob1/JudgeMe"]]
-        },
-        'Messaging Application': {
-            key: 'cs180project',
-            date: 'Fall 2020',
-            desc: 'Final Project in my Object Oriented Programming class at Purdue',
-            links: [["Github Repo", "https://github.com/JohnRob1/Project5"]]
+                'a web application using the Django framework (Python) and TailwindCSS. ' +
+                'Using the Spotify API, users get feedback about their music taste and recommendations ' +
+                'for new music. Where we got the name JudgeMe, however, is the comparison feature. ' +
+                'We added social media features to allow users to compare their music taste with their ' +
+                'friends. My contributions to this project involved creating Django templates for my teammates ' +
+                'such as the playlist UI. The rest of my work was solely focused on the comparison features. ' +
+                'Using research from Spotify on the link between music taste and personality, I developed an ' +
+                'algorithm that uses your the genres of your favorite songs to tell you a little about what ' +
+                'your music taste says about you!',
+            pics: [Images.jComp, Images.jHome, Images.jTaste],
+            links: [
+                ["Github Repo", "https://github.com/JohnRob1/JudgeMe"],
+                ["Design Doc", "https://github.com/JohnRob1/JudgeMe/blob/main/docs/Design_Document.pdf"],
+                ["Backlog", "https://github.com/JohnRob1/JudgeMe/blob/main/docs/Project_Backlog.pdf"],
+                ["Charter", "https://github.com/JohnRob1/JudgeMe/blob/main/docs/Project_Charter.pdf"]
+            ]
         },
         'Lot Tracking Application in Java': {
             key: 'lot-tracker',
             date: 'April 2022',
-            desc: 'Using the experience I got in Java from my Object Oriented Programming, ' +
+            desc: 'Using the experience I got in Java from my Object Oriented Programming class, ' +
                 'I wanted to solve a problem I was facing at my part-time position at Fisher Packing. ' +
                 'We were writing all of the lot numbers of ingredients by hand, ' +
-                'so I sped up the process with lot-tracker!',
+                'so I sped up the process with lot-tracker! This program reads the lot numbers from the ' +
+                'recipe template that was used at Fisher Packing, and automatically fills it out from lot ' +
+                'numbers that were used previously. No need to rewrite!',
+            pics: [Images.lMain, Images.lFile, Images.lOut, Images.lGif],
+            links: [["Github Repo", "https://github.com/JohnRob1/lot-tracker"]]
+        },
+        'Messaging Application': {
+            key: 'cs180project',
+            date: 'Fall 2020',
+            desc: 'Final Project in my Object Oriented Programming class at Purdue. ' +
+                'For this project, my team and I developed a full-stack Java application ' +
+                'that allowed a user to send messages in groups. My contributions to this ' +
+                'project were primarily the edit and delete functionalities of the messages, ' +
+                'which was great training for client-server development.',
+            pics: [Images.p5Main],
             links: [["Github Repo", "https://github.com/JohnRob1/Project5"]]
         }
     };

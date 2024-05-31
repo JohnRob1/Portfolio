@@ -39,6 +39,7 @@
     color: var(--tertiary);
     text-align: left;
     font-size: medium;
+    margin-top: 10px;
 }
 
 .link {
@@ -49,7 +50,9 @@
     padding-inline: 10px;
     padding-block: 5px;
     border: 1px solid var(--accent);
-    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-inline: 15px;
     transition: 0.3s;
 }
 

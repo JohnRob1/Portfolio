@@ -1,5 +1,5 @@
 .picture {
-    width: min(20vw, 300px);
+    width: min(25vw, 500px);
     border-radius: 20px;
     margin: 15px;
 }

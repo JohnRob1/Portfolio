@@ -31,12 +31,13 @@ function Description({ desc }) {
     const lastLine = lines.pop();
 
     return (
-        <p className={styles.desc}>
-            {lines.map((line) => (
-                <>{line}<br /></>
-            ))}
+        <div className={styles.desc}>
+            {lines.map((line, index) => (
+                <div key={index}>{line}<br /></div>
+            ))
+            }
             {lastLine}
-        </p>
+        </div >
     );
 
 }
