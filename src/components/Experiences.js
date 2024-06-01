@@ -1,4 +1,3 @@
-import styles from '../styles/Experiences.module.css';
 import global from '../styles/Global.module.css';
 import dannarPic from '../assets/dannarPic.png';
 import fisherPic from '../assets/fisherPic.png';
@@ -44,12 +43,12 @@ export default function Experiences() {
     }
 
     return (
-        <div className={styles.container}>
+        <>
             <div className={global.title} id="experiences">
                 EXPERIENCES
             </div>
             <Tiles tiles={content} />
-        </div>
+        </>
     );
 }
 

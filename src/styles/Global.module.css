@@ -32,16 +32,6 @@
     background: var(--accent);
 }
 
-.links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-#resume {
-    justify-content: center;
-}
-
 @media screen and (max-width: 650px) {
     .picture {
         border-radius: 10px;

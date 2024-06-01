@@ -85,9 +85,9 @@ export default function Tiles({ tiles }) {
 
                 return (
                     <div
+                        id={curr.key}
                         className={styles.tile}
                         key={curr.key}
-                        id={curr.key}
                         onClick={() => setExpanded(isOpen ? false : index)}
                     >
                         <Header title={title} date={curr.date} />

@@ -4,6 +4,17 @@ import global from '../styles/Global.module.css';
 
 export default function Creations() {
     const content = {
+        'This Portfolio Website': {
+            key: 'portfolio',
+            date: 'May 2024',
+            desc: 'I had the idea for a central hub consisting of my creations and experiences awhile ago, ' +
+                'started coding, and realized I was just making a copy of my LinkedIn profile. So, I started over from scratch ' +
+                'and started this new design scheme during my Spring 2024 semester at Purdue. I\'ve had this month of May ' +
+                'to finish up, and really enjoyed the process. This was built using React in JavaScript from create-react-app, ' +
+                'of which only useState, useEffect, and useRef for the mouse effect and accordion animations were used. ' +
+                'React components was just the step up from html I needed for better extensibility and cleaner code, and ' +
+                'vanilla CSS remains surprisingly capable and clean.'
+        },
         'FinanceFriend': {
             key: 'financefriend',
             date: 'Fall 2023',
