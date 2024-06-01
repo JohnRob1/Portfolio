@@ -60,7 +60,7 @@ function Header({ title, date }) {
 function Content({ pics, links }) {
     return (
         <>
-            <div className={global.links}>
+            <div className={styles.links}>
                 {links?.map((link) => (
                     <Link key={link} link={link} />
                 ))}
