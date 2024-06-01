@@ -21,7 +21,7 @@ function Link({ link }) {
 
     return (
         <>
-            <a className={styles.link} href={addr}>{title}</a>
+            <a className={global.link} href={addr}>{title}</a>
         </>
     );
 }
@@ -60,7 +60,7 @@ function Header({ title, date }) {
 function Content({ pics, links }) {
     return (
         <>
-            <div className={styles.links}>
+            <div className={global.links}>
                 {links?.map((link) => (
                     <Link key={link} link={link} />
                 ))}

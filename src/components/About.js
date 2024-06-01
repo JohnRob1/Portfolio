@@ -1,7 +1,9 @@
 import styles from '../styles/About.module.css';
 import global from '../styles/Global.module.css';
+import resume from '../assets/ResumeSpring2024.pdf';
 import ProfilePic from '../assets/ProfilePic.jpeg';
 import WeddingPic from '../assets/WeddingPic.JPEG';
+import { SocialIcon } from 'react-social-icons';
 
 function ProfilePicture() {
     return (
@@ -26,6 +28,27 @@ function Objective() {
     );
 }
 
+function Contact() {
+    return (
+        <>
+            <div className={styles.socialsContainer}>
+                <SocialIcon
+                    style={{ height: 30, width: 30, margin: 5 }}
+                    url="mailto:jrobinson6114@gmail.com" />
+                <SocialIcon
+                    style={{ height: 30, width: 30, margin: 5 }}
+                    url="https://www.linkedin.com/in/JohnRob1/" />
+                <SocialIcon
+                    style={{ height: 30, width: 30, margin: 5 }}
+                    url="https://github.com/JohnRob1" />
+            </div>
+            <div className={styles.resume}>
+                <a className={global.link} href={resume}>Current Resume</a>
+            </div>
+        </>
+    );
+}
+
 export default function About() {
     return (
         <div className={styles.container} id='about'>
@@ -34,6 +57,7 @@ export default function About() {
             </div>
             <ProfilePicture />
             <Objective />
+            <Contact />
         </div>
     );
 }

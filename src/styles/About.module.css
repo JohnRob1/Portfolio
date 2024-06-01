@@ -10,3 +10,16 @@
     color: var(--tertiary);
     padding-inline: 20px;
 }
+
+.socialsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.resume {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

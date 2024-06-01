@@ -42,24 +42,6 @@
     margin-top: 10px;
 }
 
-.link {
-    color: var(--tertiary);
-    font-size: 15px;
-    border-radius: 5px;
-    text-decoration: none;
-    padding-inline: 10px;
-    padding-block: 5px;
-    border: 1px solid var(--accent);
-    margin-top: 15px;
-    margin-bottom: 5px;
-    margin-inline: 15px;
-    transition: 0.3s;
-}
-
-.link:hover {
-    background: var(--accent);
-}
-
 .picsAndLinks {
     display: flex;
     flex-direction: column;
