@@ -4,44 +4,6 @@ import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-function Picture({ pic }) {
-    return (
-        <>
-            <img className={global.picture}
-                src={pic}
-                alt={pic}
-            />
-        </>
-    );
-}
-
-function Link({ link }) {
-    const title = link[0];
-    const addr = link[1];
-
-    return (
-        <>
-            <a className={global.link} href={addr}>{title}</a>
-        </>
-    );
-}
-
-function Description({ desc }) {
-    const lines = desc.split('\n');
-    const lastLine = lines.pop();
-
-    return (
-        <div className={styles.desc}>
-            {lines.map((line, index) => (
-                <div key={index}>{line}<br /></div>
-            ))
-            }
-            {lastLine}
-        </div >
-    );
-
-}
-
 function Header({ title, date }) {
     return (
         <>
@@ -54,6 +16,45 @@ function Header({ title, date }) {
                 </div>
             </div>
         </>
+    );
+}
+
+function Description({ desc }) {
+    const lines = desc.split('\n');
+    const lastLine = lines.pop();
+
+    return (
+        <>
+            <div className={styles.desc}>
+                {lines.map((line) => (<>{line}<br /></>))}
+                {lastLine}
+            </div>
+        </>
+    );
+}
+
+function Picture({ pic }) {
+    return (
+        <>
+            <img
+                className={global.picture}
+                src={pic}
+                alt={pic}
+            />
+        </>
+    );
+}
+
+function Link({ link }) {
+    const title = link[0];
+    const addr = link[1];
+
+    return (
+        <><a
+            className={global.link}
+            href={addr}>
+            {title}
+        </a></>
     );
 }
 
@@ -91,17 +92,17 @@ export default function Tiles({ tiles }) {
                         onClick={() => setExpanded(isOpen ? false : index)}
                     >
                         <Header title={title} date={curr.date} />
-                        <Description desc={curr.desc} />
+                        <Description desc={curr.desc} expanded={isOpen} />
                         <AnimatePresence initial={false}>
                             <motion.div
-                                className={styles.picsAndLinks}
+                                className={styles.contentContainer}
                                 key="content"
                                 initial="collapsed"
                                 animate={isOpen ? "open" : "collapsed"}
                                 exit="collapsed"
                                 variants={{
                                     open: { opacity: 1, height: "auto", pointerEvents: "auto" },
-                                    collapsed: { opacity: 0, height: 0, pointerEvents: "none" }
+                                    collapsed: { opacity: 1, height: 0, pointerEvents: "none" }
                                 }}
                                 transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
                             >

@@ -16,7 +16,7 @@
 
 .link {
     color: var(--tertiary);
-    font-size: 15px;
+    font-size: medium;
     border-radius: 5px;
     text-decoration: none;
     padding-inline: 10px;

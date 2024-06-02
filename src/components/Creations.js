@@ -11,8 +11,8 @@ export default function Creations() {
                 'With my internship starting in June, I\'ve had this month of May to finish up, and really enjoyed the process. ' +
                 'This was built using React in JavaScript from create-react-app, ' +
                 'of which only useState, useEffect, and useRef for the mouse effect and accordion animations (these paragraphs are clickable!) were used. ' +
-                'React components was just the step up from html I needed for better extensibility and cleaner code, and ' +
-                'vanilla CSS remains surprisingly capable and clean. '
+                'React components was just the step up from HTML/JS I needed for better extensibility and cleaner code, with ' +
+                'vanilla CSS remaining surprisingly capable and clean. '
         },
         'FinanceFriend': {
             key: 'financefriend',

@@ -19,27 +19,9 @@
     justify-content: space-between;
 }
 
-@keyframes blink {
-    25% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    75% {
-        opacity: 0.5;
-    }
-}
-
-.tile.in-view {
-    animation: blink 1s linear 1;
-}
-
 .title {
     color: var(--secondary);
-    font-size: large;
+    font-size: larger;
     text-align: left;
     font-weight: bold;
     width: 45%;
@@ -47,22 +29,23 @@
 
 .date {
     color: var(--secondary);
-    font-size: large;
+    font-size: larger;
     text-align: right;
     font-weight: bold;
     width: 45%;
 }
 
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 .desc {
     color: var(--tertiary);
     text-align: left;
-    font-size: medium;
+    font-size: large;
     margin-top: 10px;
-}
-
-.picsAndLinks {
-    display: flex;
-    flex-direction: column;
 }
 
 .links {
