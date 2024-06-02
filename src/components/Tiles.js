@@ -19,6 +19,10 @@ function Header({ title, date }) {
     );
 }
 
+// TODO: Separate the description into a main and more -- 
+// main for the header
+// more for the content
+
 function Description({ desc }) {
     const lines = desc.split('\n');
     const lastLine = lines.pop();
@@ -92,7 +96,7 @@ export default function Tiles({ tiles }) {
                         onClick={() => setExpanded(isOpen ? false : index)}
                     >
                         <Header title={title} date={curr.date} />
-                        <Description desc={curr.desc} expanded={isOpen} />
+                        <Description desc={curr.mainDesc} />
                         <AnimatePresence initial={false}>
                             <motion.div
                                 className={styles.contentContainer}
@@ -106,6 +110,7 @@ export default function Tiles({ tiles }) {
                                 }}
                                 transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
                             >
+                                <Description desc={curr.moreDesc} />
                                 <Content pics={curr.pics} links={curr.links} />
                             </motion.div>
                         </AnimatePresence>

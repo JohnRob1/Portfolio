@@ -25,6 +25,7 @@
     text-align: left;
     font-weight: bold;
     width: 45%;
+    text-shadow: 1px 0 10px;
 }
 
 .date {
@@ -33,6 +34,7 @@
     text-align: right;
     font-weight: bold;
     width: 45%;
+    text-shadow: 1px 0 10px;
 }
 
 .contentContainer {
@@ -44,7 +46,7 @@
 .desc {
     color: var(--tertiary);
     text-align: left;
-    font-size: large;
+    font-size: medium;
     margin-top: 10px;
 }
 

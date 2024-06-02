@@ -7,20 +7,26 @@ export default function Creations() {
         'This Portfolio Website': {
             key: 'portfolio',
             date: 'May 2024',
-            desc: 'I started coding this website with a new design during my Spring 2024 semester at Purdue. ' +
+            mainDesc: 'Personal Project to showcase my passion and expertise in software engineering, ' +
+                'while presenting personality as whole.\n' +
+                'Technologies: React, Framer Motion, Javascript, HTML, CSS\n' +
+                'Note: Click these tiles for more information!',
+            moreDesc: 'I started coding this website with a new design during my Spring 2024 semester at Purdue. ' +
                 'With my internship starting in June, I\'ve had this month of May to finish up, and really enjoyed the process. ' +
                 'This was built using React in JavaScript from create-react-app, ' +
-                'of which only useState, useEffect, and useRef for the mouse effect and accordion animations (these paragraphs are clickable!) were used. ' +
+                'of which only useState, useEffect, and useRef for the mouse effect and accordion animations were used. ' +
                 'React components was just the step up from HTML/JS I needed for better extensibility and cleaner code, with ' +
-                'vanilla CSS remaining surprisingly capable and clean. '
+                'vanilla CSS remaining surprisingly capable and clean. ',
         },
         'FinanceFriend': {
             key: 'financefriend',
             date: 'Fall 2023',
-            desc: 'For Senior Software Engineering Project at Purdue, my team and I built a budget ' +
-                'application using the Flutter Web framework (in the Dart programming language) and Firebase. ' +
+            mainDesc: 'Senior Software Engineer Semester Project\n' +
+                'Technologies: Flutter Web Framework (Dart), Firebase, GoogleMaps API',
+            moreDesc: 'My and team and I created a fully-featured personl finance application, ' +
+                'with the goal of learning new technologies while developing a feature-rich application.' +
                 'My contributions to this project were the below features: \n' +
-                '-Account creation\n-Profile management\n-Account dashboard\n-Input spending by location\n' +
+                '-Account creation\n-Profile management\n-Account dashboard\n-Expense input by location\n' +
                 '-Database management\n-Social media posts\n-Spending goal comments\n',
             pics: [Images.ffDash, Images.ffProf, Images.ffLoca, Images.ffSoca],
             links: [
@@ -38,12 +44,12 @@ export default function Creations() {
         'MediLingo': {
             key: 'medilingo',
             date: 'October 2023',
-            desc: 'My Project at the PittChallenge Hackathon, where my team and I ' +
-                'developed a website using MongoDB, Typescript, Next.js, Node.js, Vite, and Clerk. ' +
-                'Our goal for this website was to educate people about common medical ' +
+            mainDesc: 'PittChallenge 2023 Hackathon entry\n' +
+                'Technologies: TypeScript, React, Next.js, Vite, MongoDB Atlas',
+            moreDesc: 'My team and I\'s goal for this website was to educate people about common medical ' +
                 'conditions. My contributions to this project are the graph component ' +
-                'that represents game progress and I made multiple React components that ' +
-                'my teammates were able to use in making the game components. We won the ' +
+                'that represents game progress and multiple React components that ' +
+                'my teammates were able to use in making the game. We won the ' +
                 'best use of MongoDB Atlas and the Health Literacy category.',
             pics: [Images.mediCond, Images.mediPath, Images.mediQues, Images.mediFeti],
             links: [
@@ -54,7 +60,9 @@ export default function Creations() {
         'JudgeMe': {
             key: 'judgeme',
             date: 'Fall 2022',
-            desc: 'For my Software Engineering Class Project at Purdue, my team and I built ' +
+            mainDesc: 'Software Engineering Class Semester Project\n' +
+                'Technologies: Django Framework (Python), TailwindCSS, HTML, Javascript, SQLite',
+            moreDesc: 'For my Software Engineering Class Project at Purdue, my team and I built ' +
                 'a web application using the Django framework (Python) and TailwindCSS. ' +
                 'Using the Spotify API, users get feedback about their music taste and recommendations ' +
                 'for new music. Where we got the name JudgeMe, however, is the comparison feature. ' +
@@ -75,7 +83,8 @@ export default function Creations() {
         'Lot Tracking Application in Java': {
             key: 'lot-tracker',
             date: 'April 2022',
-            desc: 'Using the experience I got in Java from my Object Oriented Programming class, ' +
+            mainDesc: 'Personal Lot Number Tracking Project\nTechnologies: Java/JavaFX, Apache API',
+            moreDesc: 'Using the experience I got in Java from my Object Oriented Programming class, ' +
                 'I wanted to solve a problem I was facing at my part-time position at Fisher Packing. ' +
                 'We were writing all of the lot numbers of ingredients by hand, ' +
                 'so I sped up the process with lot-tracker! This program reads the lot numbers from the ' +
@@ -87,8 +96,8 @@ export default function Creations() {
         'Messaging Application': {
             key: 'cs180project',
             date: 'Fall 2020',
-            desc: 'Final Project in my Object Oriented Programming class at Purdue. ' +
-                'For this project, my team and I developed a full-stack Java application ' +
+            mainDesc: 'Object Oriented Programming Final Project\nTechnologies: Java/JavaFX',
+            moreDesc: 'For this project, my team and I developed a full-stack Java application ' +
                 'that allowed a user to send messages in groups. My contributions to this ' +
                 'project were primarily the edit and delete functionalities of the messages, ' +
                 'which was great training for client-server development.',

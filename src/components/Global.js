@@ -14,3 +14,8 @@ export { default as lMain } from '../assets/lotTrackMain.png';
 export { default as lFile } from '../assets/lotTrackFile.png';
 export { default as lOut } from '../assets/lotTrackOut.png';
 export { default as lGif } from '../assets/lotTrackGif.gif';
+export { default as hWrestling } from '../assets/HAR_23_24_B_WR.jpg';
+export { default as dannarPic } from '../assets/dannarPic.png';
+export { default as fisherPic } from '../assets/fisherPic.png';
+export { default as baAlex } from '../assets/baAlex.JPEG';
+export { default as baFloat } from '../assets/baFloating.JPG';
