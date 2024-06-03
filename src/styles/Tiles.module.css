@@ -21,11 +21,12 @@
 
 .title {
     color: var(--secondary);
-    font-size: larger;
+    font-size: large;
     text-align: left;
     font-weight: bold;
-    width: 45%;
-    text-shadow: 1px 0 10px;
+    display: flex;
+    align-items: center;
+    width: 50%;
 }
 
 .date {
@@ -34,7 +35,6 @@
     text-align: right;
     font-weight: bold;
     width: 45%;
-    text-shadow: 1px 0 10px;
 }
 
 .contentContainer {

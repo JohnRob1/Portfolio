@@ -15,12 +15,13 @@ export default function Experiences() {
         'Software Consultant for Fisher Packing': {
             key: 'fishers',
             date: 'Summer 2023',
-            mainDesc: 'I was responsible for getting all of Fisher Packing\'s inventory digitalized. ' +
+            mainDesc: 'Worked alongside a QA specialist to digitize Fisher Packing\'s inventory and ' +
+                'production management.',
+            moreDesc: 'I was responsible for getting all of Fisher Packing\'s inventory digitalized. ' +
                 'This was needed to streamline quality assurance practices for all of their products. ' +
                 'By the end of summer, I developed an GS1-128 barcode decoding extension for Google Sheets, ' +
                 'input all inventory and recipe data into an inventory tracking software, ' +
                 'and used Google Forms to digitalize the quality assurance logs.',
-            moreDesc: ' ',
             pics: [Images.fisherPic]
         },
         'Coaching Wrestling': {

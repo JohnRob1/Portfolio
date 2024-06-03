@@ -3,12 +3,22 @@ import global from '../styles/Global.module.css';
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { IoMdArrowDropright, IoMdArrowDropdown } from "react-icons/io";
+import { IconContext } from 'react-icons';
 
-function Header({ title, date }) {
+function Header({ title, date, expanded }) {
     return (
         <>
             <div className={styles.titleAndDate}>
                 <div className={styles.title}>
+                    <IconContext.Provider value={{ className: 'react-icons' }}>
+                        <div>
+                            {expanded
+                                ? <IoMdArrowDropdown size={25} />
+                                : <IoMdArrowDropright size={25} />
+                            }
+                        </div>
+                    </IconContext.Provider>
                     {title}
                 </div>
                 <div className={styles.date}>
@@ -18,10 +28,6 @@ function Header({ title, date }) {
         </>
     );
 }
-
-// TODO: Separate the description into a main and more -- 
-// main for the header
-// more for the content
 
 function Description({ desc }) {
     const lines = desc.split('\n');
@@ -95,7 +101,7 @@ export default function Tiles({ tiles }) {
                         key={curr.key}
                         onClick={() => setExpanded(isOpen ? false : index)}
                     >
-                        <Header title={title} date={curr.date} />
+                        <Header title={title} date={curr.date} expanded={isOpen} />
                         <Description desc={curr.mainDesc} />
                         <AnimatePresence initial={false}>
                             <motion.div
