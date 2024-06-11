@@ -4,6 +4,13 @@ import Tiles from './Tiles.js';
 
 export default function Experiences() {
     const content = {
+        'Purdue University': {
+            key: 'purdue',
+            date: 'Fall 2020 - December 2024',
+            mainDesc: 'Bachelor\'s of Science in Computer Science with a concentration in software engineering',
+            moreDesc: ' ',
+            pics: [Images.bmExpress, Images.purdueCS]
+        },
         'Software Engineer Intern at Dannar': {
             key: 'dannar',
             date: 'Summer 2024',
@@ -16,7 +23,7 @@ export default function Experiences() {
             key: 'fishers',
             date: 'Summer 2023',
             mainDesc: 'Worked alongside a QA specialist to digitize Fisher Packing\'s inventory and ' +
-                'production management.',
+                'production management',
             moreDesc: 'I was responsible for getting all of Fisher Packing\'s inventory digitalized. ' +
                 'This was needed to streamline quality assurance practices for all of their products. ' +
                 'By the end of summer, I developed an GS1-128 barcode decoding extension for Google Sheets, ' +

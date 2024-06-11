@@ -19,3 +19,5 @@ export { default as dannarPic } from '../assets/dannarPic.png';
 export { default as fisherPic } from '../assets/fisherPic.png';
 export { default as baAlex } from '../assets/baAlex.JPEG';
 export { default as baFloat } from '../assets/baFloating.JPG';
+export { default as bmExpress } from '../assets/BoilermakerExpress.JPG';
+export { default as purdueCS } from '../assets/purdue_cs.png';
