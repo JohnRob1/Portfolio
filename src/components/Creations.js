@@ -4,13 +4,6 @@ import global from '../styles/Global.module.css';
 
 export default function Creations() {
     const content = {
-        'BrightSpace Grade Prediction (Coming Soon!)': {
-            key: 'gradePredictor',
-            date: 'June 2024',
-            mainDesc: 'A tool for every Purdue Student that BrightSpace should already have!',
-            moreDesc: ' ',
-            links: [['Grade Predictor', '/grade-predictor']],
-        },
         'This Portfolio Website': {
             key: 'portfolio',
             date: 'May 2024',
