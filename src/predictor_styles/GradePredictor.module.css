@@ -1,0 +1,66 @@
+.container {
+    padding-inline: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1 {
+    width: 100%;
+}
+
+.classesOut {
+    background-color: var(--tertiary);
+    border-radius: 10px;
+    margin-top: 2vh;
+    margin-inline: 2vw;
+    padding: 20px;
+}
+
+.classesIn {
+    background-color: var(--secondary);
+    border-radius: 10px;
+    width: auto;
+    padding: 5px;
+    max-width: 90vw;
+}
+
+.classes h1 {
+    background-color: transparent;
+}
+
+.classLinkContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.classLink {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tertiary);
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    margin: 10px;
+    width: 15vw;
+}
+
+.classLink:hover {
+    box-shadow: 3px 3px 3px var(--primary);
+    transition: 0.3s;
+}
+
+.classLinkPic {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: 2px solid var(--primary);
+    width: auto;
+}
+
+.classLinkName {
+    font-weight: bold;
+    font-size: larger;
+    margin-block: 1vh;
+}
