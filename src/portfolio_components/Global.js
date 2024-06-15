@@ -22,3 +22,4 @@ export { default as baFloat } from '../assets/baFloating.JPG';
 export { default as bmExpress } from '../assets/BoilermakerExpress.JPG';
 export { default as purdueCS } from '../assets/purdue_cs.png';
 export { default as classIcon } from '../assets/classIcon.jpeg';
+export { default as addClass } from '../assets/addClass.svg';

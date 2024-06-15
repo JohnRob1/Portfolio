@@ -44,7 +44,7 @@
     border: 2px solid var(--primary);
     border-radius: 10px;
     margin: 10px;
-    width: 15vw;
+    width: max(15vw, 100px);
 }
 
 .classLink:hover {
@@ -55,12 +55,15 @@
 .classLinkPic {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    border-bottom: 2px solid var(--primary);
     width: auto;
+}
+
+.classAddPic {
+    padding: 75px;
 }
 
 .classLinkName {
     font-weight: bold;
     font-size: larger;
-    margin-block: 1vh;
+    margin: 5px;
 }

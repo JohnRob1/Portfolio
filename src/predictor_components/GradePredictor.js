@@ -1,6 +1,7 @@
 import styles from '../predictor_styles/GradePredictor.module.css';
 import global from '../portfolio_styles/Global.module.css';
 import * as Images from '../portfolio_components/Global.js';
+import '../App.css';
 
 function ClassLink({ name, pic }) {
     return (
@@ -34,23 +35,12 @@ function ClassList(classes) {
                     <ClassLink
                         name='Test Class'
                     />
-                    <ClassLink
-                        name='Test Class'
-                    />
-                    <ClassLink
-                        name='Test Class'
-                    />
-                    <ClassLink
-                        name='Test Class'
-                    />
-                    <ClassLink
-                        name='Test Class'
-                    />
-                    <ClassLink
-                        name='Test Class'
-                    />
-                    <ClassLink
-                        name='Test Class'
+                </div>
+                <div className={styles.classLink}>
+                    <img
+                        className={styles.classAddPic}
+                        src={Images.addClass}
+                        alt={Images.addClass}
                     />
                 </div>
             </div>
@@ -60,9 +50,11 @@ function ClassList(classes) {
 
 export default function GradePredictor() {
     return (
-        <div className={styles.container}>
-            <h1 className={global.title}>Predict My Grades</h1>
-            <ClassList />
+        <div className="App">
+            <div className={styles.container}>
+                <h1 className={global.title}>Predict My Grades</h1>
+                <ClassList />
+            </div>
         </div>
     );
 }

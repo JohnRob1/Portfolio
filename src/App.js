@@ -8,32 +8,32 @@ import GradePredictor from './predictor_components/GradePredictor';
 import React from 'react';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
+function Content() {
+    return (
+        <div className="App">
+            <header>
+                <CustomCursor />
+                <section>
+                    <div className="content">
+                        <About />
+                        <Experiences />
+                        <Creations />
+                    </div>
+                    <Home />
+                </section>
+            </header>
+        </div>
+    );
+}
+
 function App() {
     return (
         <Router>
             <Routes>
                 <Route path='/'
-                    element={
-                        <div className="App">
-                            <header>
-                                <CustomCursor />
-                                <section>
-                                    <div className="content">
-                                        <About />
-                                        <Experiences />
-                                        <Creations />
-                                    </div>
-                                    <Home />
-                                </section>
-                            </header>
-                        </div>
-                    } />
+                    element={<Content />} />
                 <Route path='/grade-predictor'
-                    element={
-                        <div className="App">
-                            <GradePredictor />
-                        </div>
-                    }>
+                    element={<GradePredictor />}>
                 </Route>
             </Routes>
         </Router>
