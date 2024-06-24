@@ -43,7 +43,7 @@ function Contact() {
                     url="https://github.com/JohnRob1" />
             </div>
             <div className={styles.resume}>
-                <a className={global.link} href={resume} target="_blank" rel="noreferrer">Current Resume</a>
+                <a className={global.link} href={resume} target="_blank" rel="noopener noreferrer">Current Resume</a>
             </div>
         </>
     );
