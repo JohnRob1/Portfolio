@@ -21,4 +21,3 @@ export { default as baAlex } from '../assets/baAlex.JPEG';
 export { default as baFloat } from '../assets/baFloating.JPG';
 export { default as bmExpress } from '../assets/BoilermakerExpress.JPG';
 export { default as purdueCS } from '../assets/purdue_cs.png';
-export { default as resume } from 'https://drive.google.com/file/d/1bp0zU_qT8AbHO-fLRY76v_NsPJrxc-dn/view?usp=sharing'
