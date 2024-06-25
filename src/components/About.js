@@ -1,6 +1,6 @@
 import styles from '../styles/About.module.css';
 import global from '../styles/Global.module.css';
-import resume from '../assets/ResumeSpring2024.pdf';
+import * as Assets from '../components/Global.js';
 import ProfilePic from '../assets/ProfilePic.jpeg';
 import WeddingPic from '../assets/WeddingPic.JPEG';
 import { SocialIcon } from 'react-social-icons';
@@ -43,7 +43,7 @@ function Contact() {
                     url="https://github.com/JohnRob1" />
             </div>
             <div className={styles.resume}>
-                <a className={global.link} href={resume} download="JohnRobinsonResume">Current Resume</a>
+                <a className={global.link} href={Assets.resume}>Current Resume</a>
             </div>
         </>
     );
