@@ -1,7 +1,13 @@
 import styles from '../predictor_styles/GradePredictor.module.css';
 import global from '../portfolio_styles/Global.module.css';
+import outputs from '../amplify_outputs.json';
+import { Amplify } from 'aws-amplify';
+import { signIn } from 'aws-amplify/auth'
+// import { generateClient } from 'aws-amplify/data';
 import * as Images from '../portfolio_components/Global.js';
 import '../App.css';
+
+Amplify.configure(outputs);
 
 function ClassLink({ name, pic }) {
     return (
@@ -18,7 +24,7 @@ function ClassLink({ name, pic }) {
     );
 }
 
-function ClassList(classes) {
+function ClassList() {
     return (
         <div className={styles.classesOut}>
             <div className={styles.classesIn}>
@@ -48,12 +54,36 @@ function ClassList(classes) {
     );
 }
 
+function Login() {
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const form = event.currentTarget
+        await signIn({
+            username: form.elements.username.value,
+            password: form.elements.password.value,
+        })
+    }
+
+    return (
+        <form onSubmit={handleSubmit}>
+            <label htmlFor='username'>Username:</label>
+            <input type='text' id='username' name='username' />
+            <label htmlFor='password'>Password:</label>
+            <input type='password' id='password' name='password' />
+            <input type='submit' />
+        </form>
+    );
+}
+
 export default function GradePredictor() {
+    // const client = generateClient(); // use this Data client for CRUDL requests
+
     return (
         <div className="App">
             <div className={styles.container}>
                 <h1 className={global.title}>Predict My Grades</h1>
                 <ClassList />
+                <Login />
             </div>
         </div>
     );
