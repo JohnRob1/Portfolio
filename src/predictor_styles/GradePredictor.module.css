@@ -1,4 +1,4 @@
-.container {
+.main {
     padding-inline: 5px;
     display: flex;
     flex-direction: column;
@@ -6,24 +6,15 @@
     align-items: center;
 }
 
-.container h1 {
+.main h1 {
     width: 100%;
+    padding-block: 5px;
+    font-style: italic;
 }
 
-.classesOut {
-    background-color: var(--tertiary);
-    border-radius: 10px;
-    margin-top: 2vh;
-    margin-inline: 2vw;
-    padding: 20px;
-}
-
-.classesIn {
-    background-color: var(--secondary);
-    border-radius: 10px;
-    width: auto;
-    padding: 5px;
+.classes {
     max-width: 90vw;
+    width: auto;
 }
 
 .classes h1 {
@@ -66,4 +57,40 @@
     font-weight: bold;
     font-size: larger;
     margin: 5px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.loginButtons div {
+    margin-inline: 6px;
+    margin-block: 5px;
+}
+
+.login label {
+    color: var(--tertiary);
+    margin: 5px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.login input {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--tertiary);
+}
+
+.login input[type=submit] {
+    width: 30%;
 }
