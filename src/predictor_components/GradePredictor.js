@@ -2,7 +2,7 @@ import styles from '../predictor_styles/GradePredictor.module.css';
 import global from '../portfolio_styles/Global.module.css';
 import outputs from '../amplify_outputs.json';
 import { Amplify } from 'aws-amplify';
-import { getCurrentUser, signIn, signUp } from 'aws-amplify/auth'
+import { signIn } from 'aws-amplify/auth'
 import * as Images from '../portfolio_components/Global.js';
 import '../App.css';
 
