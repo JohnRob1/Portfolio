@@ -1,5 +1,0 @@
-type Classes @model @auth(rules: [{allow: public, provider: iam}])
-{
-  className: String
-  isDone: Boolean
-}
