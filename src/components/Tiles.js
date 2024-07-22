@@ -86,7 +86,7 @@ function Content({ pics, links }) {
 }
 
 export default function Tiles({ tiles }) {
-    const [expanded, setExpanded] = useState(-1);
+    const [expanded, setExpanded] = useState(0);
 
     return (
         <>
