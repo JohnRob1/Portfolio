@@ -91,7 +91,7 @@ export default function Tiles({ tiles }) {
     return (
         <>
             {Object.keys(tiles).map((title, index) => {
-                const isOpen = index === expanded;
+                let isOpen = index === expanded;
                 const curr = tiles[title];
 
                 return (
@@ -100,6 +100,7 @@ export default function Tiles({ tiles }) {
                         className={styles.tile}
                         key={curr.key}
                         onClick={() => setExpanded(isOpen ? false : index)}
+                        style={{ border: isOpen ? '2px solid var(--accent)' : '' }}
                     >
                         <Header title={title} date={curr.date} expanded={isOpen} />
                         <Description desc={curr.mainDesc} />
