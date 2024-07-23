@@ -50,9 +50,7 @@
     cursor: pointer;
 }
 
-.skills {}
-
-.skill @media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
     .container {
         height: auto;
         position: static;
