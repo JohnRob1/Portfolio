@@ -2,15 +2,26 @@ import styles from '../styles/About.module.css';
 import global from '../styles/Global.module.css';
 import ProfilePic from '../assets/ProfilePic.jpeg';
 import WeddingPic from '../assets/WeddingPic.JPEG';
+import { Skills } from './Home.js';
 import { SocialIcon } from 'react-social-icons';
+import { ScreenWidth } from './Global.js';
 
 function ProfilePicture() {
+    const profileStyle = {
+        width: (ScreenWidth() >= 650) ? '22vw' : '35vw',
+        borderRadius: '20px',
+        marginInline: '2vw',
+        marginBlock: '15px'
+    }
+
     return (
         <div>
-            <img className={global.picture}
+            <img
+                style={profileStyle}
                 src={ProfilePic}
                 alt="ProfilePic" />
-            <img className={global.picture}
+            <img
+                style={profileStyle}
                 src={WeddingPic}
                 alt="WeddingPic" />
         </div>
@@ -56,6 +67,10 @@ export default function About() {
             </div>
             <ProfilePicture />
             <Objective />
+            {ScreenWidth() < 650
+                ? <Skills />
+                : <></>
+            }
             <Contact />
         </div>
     );

@@ -25,7 +25,7 @@ export default function Creations() {
             date: 'Fall 2023',
             mainDesc: 'Senior Software Engineer Semester Project\n' +
                 'Technologies: Flutter Web Framework (Dart), Firebase, GoogleMaps API',
-            moreDesc: 'My and team and I created a fully-featured personl finance application, ' +
+            moreDesc: 'My and team and I created a fully-featured personal finance application, ' +
                 'with the goal of learning new technologies while developing a feature-rich application.' +
                 'My contributions to this project were the below features: \n' +
                 '-Account creation\n-Profile management\n-Account dashboard\n-Expense input by location\n' +

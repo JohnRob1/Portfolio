@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 export { default as ffDash } from '../assets/FF_Dash.png';
 export { default as ffProf } from '../assets/FF_Profile.png';
 export { default as ffLoca } from '../assets/FF_Location.png';
@@ -21,3 +23,15 @@ export { default as baAlex } from '../assets/baAlex.JPEG';
 export { default as baFloat } from '../assets/baFloating.JPG';
 export { default as bmExpress } from '../assets/BoilermakerExpress.JPG';
 export { default as purdueCS } from '../assets/purdue_cs.png';
+export function ScreenWidth() {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return width;
+}
+

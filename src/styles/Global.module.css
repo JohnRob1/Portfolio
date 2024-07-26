@@ -32,9 +32,10 @@
     background: var(--accent);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 930px) {
     .picture {
         border-radius: 10px;
-        width: 35vw;
+        width: 100%;
+        margin-inline: 0;
     }
 }
