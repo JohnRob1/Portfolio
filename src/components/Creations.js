@@ -17,6 +17,8 @@ export default function Creations() {
                 'of which only useState, useEffect, and useRef for the mouse effect and accordion animations were used. ' +
                 'React components was just the step up from HTML/JS I needed for better extensibility and cleaner code, with ' +
                 'vanilla CSS remaining surprisingly capable and clean. ',
+            pics: [],
+            links: [["Github Repo", "https://github.com/JohnRob1/Portfolio.git"]]
         },
         'FinanceFriend': {
             key: 'financefriend',
