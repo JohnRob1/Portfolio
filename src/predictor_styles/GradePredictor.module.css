@@ -1,5 +1,5 @@
 .main {
-    padding-inline: 5px;
+    padding-inline: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,33 +9,36 @@
 .main h1 {
     width: 100%;
     padding-block: 5px;
-    font-style: italic;
 }
 
 .classes {
-    max-width: 90vw;
-    width: auto;
-}
-
-.classes h1 {
-    background-color: transparent;
-}
-
-.classLinkContainer {
+    width: 100%;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    margin-block: 10px;
+    padding: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+}
+
+.classLinksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .classLink {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: var(--tertiary);
     border: 2px solid var(--primary);
     border-radius: 10px;
-    margin: 10px;
-    width: max(15vw, 100px);
+    width: 100%;
+    padding: 5px;
 }
 
 .classLink:hover {
@@ -43,54 +46,21 @@
     transition: 0.3s;
 }
 
-.classLinkPic {
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    width: auto;
-}
-
-.classAddPic {
-    padding: 75px;
-}
-
-.classLinkName {
+.classAttrs {
     font-weight: bold;
     font-size: larger;
-    margin: 5px;
+    margin-inline: 10px;
 }
 
-.login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.loginButtons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.loginButtons div {
-    margin-inline: 6px;
-    margin-block: 5px;
-}
-
-.login label {
-    color: var(--tertiary);
-    margin: 5px;
-    font-size: large;
-    font-weight: bold;
-}
-
-.login input {
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: var(--tertiary);
-}
-
-.login input[type=submit] {
-    width: 30%;
+[data-amplify-authenticator] {
+    --amplify-components-authenticator-router-box-shadow: 0 0 16px var(--accent);
+    --amplify-components-button-primary-background-color: var(--primary);
+    --amplify-components-fieldcontrol-focus-box-shadow: 0 0 0 2px var(--accent);
+    --amplify-components-tabs-item-active-border-color: var(--accent);
+    --amplify-components-tabs-item-color: var(--primary);
+    --amplify-components-tabs-item-active-color: var(--accent);
+    --amplify-components-button-link-color: var(--accent);
+    --amplify-components-authenticator-state-inactive-background-color: var(--accent);
+    --amplify-components-button-primary-hover-background-color: var(--accent);
+    --amplify-components-tabs-item-hover-color: var(--accent);
 }
