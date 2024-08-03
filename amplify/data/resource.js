@@ -7,13 +7,33 @@ specifies that any unauthenticated user can "create", "read", "update",
 and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Classes: a
-    .model({
-      className: a.string(),
-      isDone: a.boolean(),
-    })
-    .authorization((allow) => [allow.guest()]),
-});
+
+  Class: a.model({
+    name: a.string().default('Your Class'),
+    grade: a.float().default(100),
+    weights: a.hasMany('Weight', 'classId'),
+    isDone: a.boolean(),
+  }),
+
+  Weight: a.model({
+    weightId: a.id().required(),
+    name: a.string().default(''),
+    percent: a.float().required(),
+    assignments: a.hasMany('Assignment', 'weightId'),
+    classId: a.id(),
+    class: a.belongsTo('Class', 'classId')
+  }),
+
+  Assignment: a.model({
+    assignmentId: a.id().required(),
+    name: a.string().default('Your Assignment'),
+    grade: a.float().default(100),
+    weightId: a.id(),
+    weight: a.belongsTo('Weight', 'weightId')
+  })
+}).authorization((allow) => [
+  allow.guest()
+]);
 
 export const data = defineData({
   schema,

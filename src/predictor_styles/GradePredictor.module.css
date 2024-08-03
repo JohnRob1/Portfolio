@@ -11,47 +11,6 @@
     padding-block: 5px;
 }
 
-.classes {
-    width: 100%;
-    background-color: var(--secondary);
-    border-radius: 5px;
-    margin-block: 10px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.classLinksContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.classLink {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: var(--tertiary);
-    border: 2px solid var(--primary);
-    border-radius: 10px;
-    width: 100%;
-    padding: 5px;
-}
-
-.classLink:hover {
-    box-shadow: 3px 3px 3px var(--primary);
-    transition: 0.3s;
-}
-
-.classAttrs {
-    font-weight: bold;
-    font-size: larger;
-    margin-inline: 10px;
-}
-
 [data-amplify-authenticator] {
     --amplify-components-authenticator-router-box-shadow: 0 0 16px var(--accent);
     --amplify-components-button-primary-background-color: var(--primary);
