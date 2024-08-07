@@ -1,22 +1,17 @@
 import styles from '../predictor_styles/ClassList.module.css';
 import global from '../portfolio_styles/Global.module.css';
-import { useState } from 'react';
 
-const Assignment = () => {
-    const [aName, setaName] = useState('Assignment');
-    const [actual, setActual] = useState(0);
-    const [weight, setWeight] = useState(100);
-
-    const grade = actual / weight;
+const GradeHeader = ({ name, actual, total, onChange }) => {
+    const grade = actual / total;
 
     return (
         <div className={styles.classHeader} style={{ width: '100%' }}>
             <div className={styles.classAttrs}>
-                {aName}
+                {name}
             </div>
             <div style={{ display: 'flex' }}>
                 <div className={styles.classAttrs}>
-                    {actual + ' / ' + weight}
+                    {actual + ' / ' + total}
                 </div>
                 <div className={styles.classAttrs}>
                     {grade + '%'}
@@ -31,4 +26,4 @@ const Assignment = () => {
     );
 }
 
-export default Assignment;
+export default GradeHeader;
