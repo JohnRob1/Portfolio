@@ -7,23 +7,41 @@ const Weight = () => {
     const [name, setName] = useState('Weight');
     const [actual, setActual] = useState(0);
     const [total, setTotal] = useState(100);
-    const [assignments, setAssignments] = useState([<Header />]);
+    const [addAmount, setAddAmount] = useState(1);
+    const [assignments, setAssignments] = useState([<Header name='Assignment' actual={actual} total={total} />]);
+    const maxAssignments = 20;
 
-    const Add5Assignments = () => {
+    const AddAssignment = () => {
         setAssignments(prevAssignments => {
             const newAssignments = [...prevAssignments];
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < addAmount; i++) {
                 newAssignments.push(<Header key={assignments.length + i} />);
             }
             return newAssignments;
         });
     }
 
-    const modifiedLink = {
-        fontWeight: 'bolder',
-        marginInline: '0px',
-        width: '40%',
-        color: 'var(--primary)'
+    const AmountModifier = ({ num, more }) => {
+        const ChangeAmount = () => {
+            if (more && addAmount <= (maxAssignments - num))
+                setAddAmount(addAmount + num)
+            else if (!more && addAmount > (num))
+                setAddAmount(addAmount - num)
+        }
+
+        return (
+            <div
+                className={global.link}
+                style={{
+                    fontWeight: 'bolder',
+                    marginInline: '5px',
+                    color: 'var(--primary)',
+                    width: '10%'
+                }}
+                onClick={() => ChangeAmount()}>
+                {num} {more ? 'More' : 'Less'}
+            </div>
+        );
     }
 
     return (
@@ -35,20 +53,23 @@ const Weight = () => {
             />
             <hr style={{ borderTop: '1px solid var(--primary)', width: '100%' }} />
             {assignments}
-            <div className={styles.classHeader}>
+            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
+                <AmountModifier num={1} more={false} />
+                <AmountModifier num={5} more={false} />
                 <div
                     className={global.link}
-                    style={modifiedLink}
-                    onClick={() => setAssignments([...assignments, <Header key={assignments.length} />])}>
-                    Add Assignment
+                    style={{
+                        fontWeight: 'bolder',
+                        marginInline: '5px',
+                        color: 'var(--primary)',
+                        width: '80%',
+                    }}
+                    onClick={() => AddAssignment()}>
+                    Add {addAmount} Assignment{addAmount > 1 ? 's' : ''}
                 </div>
-                <div
-                    className={global.link}
-                    style={modifiedLink}
-                    onClick={() => Add5Assignments()}>
-                    Add 5 Assignments
-                </div>
-            </div>
+                <AmountModifier num={1} more={true} />
+                <AmountModifier num={5} more={true} />
+            </div >
         </>
     );
 }
