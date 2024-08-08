@@ -72,6 +72,7 @@ export function Skills() {
             <Skill name={'Firebase'} rating={2} />
             <Skill name={'SQL'} rating={2} />
             <Skill name={'Linux'} rating={4} />
+            <Skill name={'Python'} rating={3} />
         </div>
     );
 }

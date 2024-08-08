@@ -6,15 +6,18 @@ export default function Experiences() {
     const content = {
         'Purdue University': {
             key: 'purdue',
-            date: 'Fall 2020 - December 2024',
+            date: 'Fall 2020 - Fall 2024',
             mainDesc: 'Bachelor\'s of Science in Computer Science with a concentration in software engineering',
-            moreDesc: ' ',
+            moreDesc: 'I will be finishing up my degree this Fall with just one class: CS 381, Algorithm Analysis. ' + 
+            'I know it seems strange to take just one class, but after some personal challenges in Spring 2024, it made a lot of ' +
+            'sense to lighten my courseload by dropping the most time-consuming course. This was also a great opportunity' +
+            'for some more work experience before jumping right into industry, and I am happy to say I was able to take advantage!',
             pics: [Images.bmExpress, Images.purdueCS]
         },
         'Software Engineer Intern at Dannar': {
             key: 'dannar',
             date: 'Summer 2024',
-            mainDesc: 'I will be working alongside a software engineer to help develop software for ' +
+            mainDesc: 'I worked alongside a senior software engineer to develop, debug, and maintain the software for ' +
                 'Dannar\'s Mobile Power Station!',
             moreDesc: ' ',
             pics: [Images.dannarPic]
