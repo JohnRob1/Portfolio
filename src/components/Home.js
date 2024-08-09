@@ -69,10 +69,11 @@ export function Skills() {
             <Skill name={'Django'} rating={3} />
             <Skill name={'Flutter'} rating={3} />
             <Skill name={'React'} rating={2} />
-            <Skill name={'Firebase'} rating={2} />
-            <Skill name={'SQL'} rating={2} />
+            <Skill name={'Firebase'} rating={3} />
+            <Skill name={'SQL'} rating={3} />
             <Skill name={'Linux'} rating={4} />
             <Skill name={'Python'} rating={3} />
+            <Skill name={'AWS'} rating={3} />
         </div>
     );
 }

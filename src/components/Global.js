@@ -17,12 +17,13 @@ export { default as lFile } from '../assets/lotTrackFile.png';
 export { default as lOut } from '../assets/lotTrackOut.png';
 export { default as lGif } from '../assets/lotTrackGif.gif';
 export { default as hWrestling } from '../assets/HAR_23_24_B_WR.jpg';
-export { default as dannarPic } from '../assets/dannarPic.png';
+export { default as dannarPic } from '../assets/dannarPic.jpg';
 export { default as fisherPic } from '../assets/fisherPic.png';
 export { default as baAlex } from '../assets/baAlex.JPEG';
 export { default as baFloat } from '../assets/baFloating.JPG';
 export { default as bmExpress } from '../assets/BoilermakerExpress.JPG';
 export { default as purdueCS } from '../assets/purdue_cs.png';
+export { default as dannarMPS } from '../assets/DANNAR-MPS.jpg';
 export function ScreenWidth() {
     const [width, setWidth] = useState(window.innerWidth);
 

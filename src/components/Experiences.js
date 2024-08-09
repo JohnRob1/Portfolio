@@ -17,10 +17,17 @@ export default function Experiences() {
         'Software Engineer Intern at Dannar': {
             key: 'dannar',
             date: 'Summer 2024',
-            mainDesc: 'I worked alongside a senior software engineer to develop, debug, and maintain the software for ' +
-                'Dannar\'s Mobile Power Station!',
-            moreDesc: ' ',
-            pics: [Images.dannarPic]
+            mainDesc: 'Worked alongside a senior software engineer to develop, debug, and maintain the software for ' +
+                'Dannar\'s Mobile Power Station! Another role included taking on the Dannar Telematics Project, where I used ' + 
+            'CAN message data in an AWS S3 bucket to decode, query, and visualize the data. Most of my time was spent learning ' +
+            'about the IQAN codebase and documenting its functionality via a Gitlab Wiki.',
+            moreDesc: 'Dannar is an electric vehicle startup whose target market are customers with large-scale operations ' +
+            'that require high amounts of power. The Mobile Power Station does this with a minimal carbon footprint without ' +
+            'compromising on efficiency or convenience! I have learned so much about the automobile industry and software\'s ' +
+            'plays an important role. Software development at Dannar developed my knowledge of CAN and J1939 message protocols, ' +
+            'MATLAB/Simulink and IQAN/QCode programming, AWS services and Python for data analysis, the physics of a high-voltage ' +
+            'system, and Git, HTML/Markdown, and finite state machines for documentation purposes.',
+            pics: [Images.dannarPic, Images.dannarMPS]
         },
         'Software Consultant for Fisher Packing': {
             key: 'fishers',
