@@ -3,43 +3,49 @@ import global from '../portfolio_styles/Global.module.css';
 import Header from './GradeHeader.js';
 import { useState } from 'react';
 
-function Sum(array) {return (array.reduce((sum, i) => sum + i))}
 const maxAssignments = 50;
+function SumTotal(array) { return array.reduce((sum, a) => sum + parseFloat(a.total), 0); }
+function SumActual(array) { return array.reduce((sum, a) => sum + parseFloat(a.actual), 0); }
 
 const Weight = () => {
-    const [name, setName] = useState('Weight');
-
-    const [actuals, setActuals] = useState([0]);
-    const [actual, setActual] = useState(Sum(actuals));
-
-    const [totals, setTotals] = useState([100]);
-    const [total, setTotal] = useState(Sum(totals));
-
+    const [weight, setWeight] = useState({ name: 'Weight', actual: 0, total: 100 });
     const [addAmount, setAddAmount] = useState(1);
     const [assignments, setAssignments] = useState([
-        { id: 0, name: 'Assignment', actual: actuals[0], total: total }
+        { name: 'Assignment', actual: 0, total: 100 }
     ]);
 
+    const updateAssignment = (id, attr, newVal) => {
+        setAssignments(prevAssignments => {
+            const updatedAssignments = [...prevAssignments];
+            updatedAssignments[id] = {
+                ...updatedAssignments[id],
+                [attr]: newVal
+            };
+
+            setWeight({
+                name: weight.name,
+                actual: SumActual(updatedAssignments),
+                total: (SumTotal(updatedAssignments) > weight.total)
+                    ? SumTotal(updatedAssignments) : weight.total
+            });
+
+            return updatedAssignments;
+        });
+    };
+
     const removeAssignment = (id) => {
-        setAssignments(assignments.filter(a => a.id !== id));
-    }
+        setAssignments(assignments.filter((_, index) => id !== index));
+    };
 
     const addAssignment = () => {
         setAssignments(prevAssignments => {
             if (prevAssignments.length + addAmount > maxAssignments) return prevAssignments;
 
             const newAssignments = [...prevAssignments];
-            const assignmentTotal = ((total - Sum(totals)) / addAmount).toFixed(2);
+            const assignmentTotal = ((weight.total - SumTotal(assignments)) / addAmount).toFixed(2);
 
             for (let i = 0; i < addAmount; i++) {
-                const id = assignments.length + i;
-                const newTotals = [...totals, assignmentTotal];
-                const newActuals = [...actuals, 0];
-                setTotals(newTotals);
-                setActuals(newActuals);
-
                 newAssignments.push({
-                    id: id,
                     name: 'Assignment',
                     actual: 0,
                     total: assignmentTotal > 0 ? assignmentTotal : 0
@@ -50,30 +56,30 @@ const Weight = () => {
         });
     }
 
-    const AmountModifier = ({ num, more }) => {
-        const ChangeAmount = () => {
-            if (more && addAmount < (maxAssignments - num))
-                setAddAmount(addAmount + num)
-            else if (!more && addAmount > (num))
-                setAddAmount(addAmount - num)
+    const AssignmentAddButton = () => {
+        const AmountModifier = ({ num, more }) => {
+            const ChangeAmount = () => {
+                if (more && addAmount < (maxAssignments - num))
+                    setAddAmount(addAmount + num)
+                else if (!more && addAmount > (num))
+                    setAddAmount(addAmount - num)
+            }
+
+            return (
+                <div
+                    className={global.link}
+                    style={{
+                        fontWeight: 'bolder',
+                        marginInline: '5px',
+                        color: 'var(--primary)',
+                        width: '10%'
+                    }}
+                    onClick={() => ChangeAmount()}>
+                    {num} {more ? 'More' : 'Less'}
+                </div>
+            );
         }
 
-        return (
-            <div
-                className={global.link}
-                style={{
-                    fontWeight: 'bolder',
-                    marginInline: '5px',
-                    color: 'var(--primary)',
-                    width: '10%'
-                }}
-                onClick={() => ChangeAmount()}>
-                {num} {more ? 'More' : 'Less'}
-            </div>
-        );
-    }
-
-    const AddButton = () => {
         if (assignments.length < maxAssignments) {
             return (
                 <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
@@ -96,7 +102,7 @@ const Weight = () => {
             );
         } else {
             return (
-            <div style={{
+                <div style={{
                     display: 'flex',
                     justifyContent: 'center',
                     fontWeight: 'bolder',
@@ -104,8 +110,8 @@ const Weight = () => {
                     color: 'var(--primary)',
                     width: '100%'
                 }}>
-                Assignment Limit Reached
-            </div>
+                    Assignment Limit Reached
+                </div>
             );
         }
     }
@@ -113,22 +119,24 @@ const Weight = () => {
     return (
         <>
             <Header
-                name={name}
-                actual={actual}
-                total={total}
+                id={0}
+                name={weight.name}
+                actual={weight.actual}
+                total={weight.total}
             />
             <hr style={{ borderTop: '1px solid var(--primary)', width: '100%' }} />
-            {assignments.map(a => (
+            {assignments.map((a, index) => (
                 <Header
-                    key={a.id}
-                    id={a.id}
+                    key={index}
+                    id={index}
                     name={a.name}
                     actual={a.actual}
                     total={a.total}
                     remove={removeAssignment}
+                    update={updateAssignment}
                 />
             ))}
-            <AddButton />
+            <AssignmentAddButton />
         </>
     );
 }
