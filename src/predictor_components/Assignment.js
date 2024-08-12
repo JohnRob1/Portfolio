@@ -25,7 +25,7 @@ function calcParent(newVal, prevVal, parentVal) {
         : newParentVal;
 }
 
-const Assignment = ({ name, actual, total, setParent }) => {
+const Assignment = ({ id, name, actual, total, setParent, remove }) => {
     const newGrade = calcGrade(actual, total);
     const [attrs, setAttrs] = useState({
         aname: name,
@@ -114,6 +114,11 @@ const Assignment = ({ name, actual, total, setParent }) => {
                         });
                     }}
                 />
+                <div
+                    className={styles.deleteButton}
+                    onClick={() => remove(id, attrs.aactual, attrs.atotal)}>
+                    Delete
+                </div>
             </div>
         </div>
     );

@@ -3,8 +3,6 @@ import global from '../portfolio_styles/Global.module.css';
 import React, { useState } from 'react';
 import Assignment from './Assignment.js';
 
-function SumTotal(array) { return array.reduce((sum, a) => sum + parseFloat(a.total), 0); }
-
 // NOTE: used to handle the state of the assignment list, so the user can edit without rerenders
 const AssignmentList = () => {
     const [list, setList] = useState([
@@ -16,16 +14,50 @@ const AssignmentList = () => {
         grade: 0
     });
 
+    function removeAssignment(index, actual, total) {
+        setList(prev => {
+            const newList = prev;
+            delete newList[index];
+            return newList;
+        });
+        setAttrs(prev => {
+            const newActual = prev.actual - actual;
+            const newTotal = prev.total - total;
+            const newGrade = parseFloat((newActual / newTotal) * 100).toFixed(2);
+            return ({
+                actual: newActual,
+                total: newTotal,
+                grade: (newGrade - Math.floor(newGrade) === 0)
+                    ? parseFloat(newGrade).toFixed(0)
+                    : newGrade
+            });
+        });
+    }
+
     const maxAssignments = 50;
     const [addAmount, setAddAmount] = useState(1);
+    const [assignmentTotal, setAssignmentTotal] = useState(0);
     function addAssignment() {
         setList(prev => {
             if (prev.length + addAmount > maxAssignments) return prev;
 
             const newAssignments = [...prev];
-            const assignmentTotal = ((attrs.total - SumTotal(list)) / addAmount).toFixed(2);
-
             for (let i = 0; i < addAmount; i++) {
+                setAttrs(prev => {
+                    const newTotal = parseFloat(
+                        parseFloat(prev.total) + parseFloat(assignmentTotal)
+                    ).toFixed(2);
+                    const newGrade = parseFloat((prev.actual / newTotal) * 100).toFixed(2);
+                    return ({
+                        ...prev,
+                        total: (newTotal - Math.floor(newTotal) === 0)
+                            ? parseFloat(newTotal).toFixed(0)
+                            : newTotal,
+                        grade: (newGrade - Math.floor(newGrade) === 0)
+                            ? parseFloat(newGrade).toFixed(0)
+                            : newGrade
+                    });
+                });
                 newAssignments.push({
                     name: 'Assignment',
                     actual: 0,
@@ -83,15 +115,23 @@ const AssignmentList = () => {
     return (
         <>
             <div>{attrs.actual} / {attrs.total} {attrs.grade}%</div>
+            <input
+                type={'number'}
+                value={assignmentTotal}
+                onChange={e => setAssignmentTotal(e.target.value)}
+            />
             <hr style={{ borderTop: '1px solid var(--primary)', width: '100%' }} />
-            {list.map((a, index) =>
-                <Assignment
+            {list.map((a, index) => a
+                ? <Assignment
                     key={index}
+                    id={index}
                     name={a.name}
                     actual={a.actual}
                     total={a.total}
                     setParent={setAttrs}
+                    remove={removeAssignment}
                 />
+                : <></>
             )}
             <AssignmentAddButton />
         </>
