@@ -28,22 +28,3 @@
     padding: 5px;
     margin: 5px;
 }
-
-.classContainer:hover {
-    box-shadow: 3px 3px 3px var(--primary);
-    transition: 0.3s;
-}
-
-.classHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin: 5px;
-}
-
-.classAttrs {
-    font-weight: bold;
-    font-size: larger;
-    margin-inline: 10px;
-}

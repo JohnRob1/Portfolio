@@ -1,6 +1,6 @@
 import styles from '../predictor_styles/GradePredictor.module.css';
 import outputs from "../amplify_outputs.json";
-import ClassList from './ClassList.js';
+import ClassList from './Classes.js';
 import { Authenticator, useTheme, View } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
