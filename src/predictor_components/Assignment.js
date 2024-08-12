@@ -9,7 +9,8 @@ function calcGrade(actual, total) {
 }
 
 function calcActualFromGrade(grade, total) {
-    const newActual = parseFloat((total * grade) / 100).toFixed(2);
+    const t = (total === 0) ? 100 : total
+    const newActual = parseFloat((t * grade) / 100).toFixed(2);
     return (newActual - Math.floor(newActual) === 0)
         ? parseFloat(newActual).toFixed(0)
         : newActual;
@@ -25,11 +26,12 @@ function calcParent(newVal, prevVal, parentVal) {
 }
 
 const Assignment = ({ name, actual, total, setParent }) => {
+    const newGrade = calcGrade(actual, total);
     const [attrs, setAttrs] = useState({
         aname: name,
         aactual: actual,
         atotal: total,
-        agrade: parseFloat(actual / total).toFixed(2)
+        agrade: isNaN(newGrade) ? 0 : newGrade
     });
 
     return (
@@ -103,7 +105,6 @@ const Assignment = ({ name, actual, total, setParent }) => {
                             agrade: newVal
                         }));
                         setParent(prev => {
-                            console.log(prev.total);
                             const newParentActual = calcParent(newActual, attrs.aactual, prev.actual);
                             return ({
                                 ...prev,

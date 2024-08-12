@@ -28,3 +28,32 @@
     padding: 5px;
     margin: 5px;
 }
+
+.inClassButton {
+    font-weight: bolder;
+    margin-inline: 5px;
+    color: var(--primary);
+    font-size: medium;
+    border-radius: 5px;
+    text-decoration: none;
+    padding-inline: 10px;
+    padding-block: 5px;
+    border: 1px solid var(--accent);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.inClassButton:hover {
+    background: var(--accent);
+}
+
+.errorMsg {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: larger;
+    margin-inline: 5px;
+    color: var(--primary);
+    width: 100%;
+}
