@@ -1,7 +1,7 @@
 .picture {
     width: min(25vw, 500px);
     border-radius: 20px;
-    margin: 15px;
+    margin: 10px;
 }
 
 .title {
@@ -24,7 +24,7 @@
     border: 1px solid var(--accent);
     margin-top: 15px;
     margin-bottom: 5px;
-    margin-inline: 15px;
+    margin-inline: 10px;
     transition: 0.3s;
 }
 

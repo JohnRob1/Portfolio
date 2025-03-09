@@ -7,10 +7,10 @@
 
 .App {
     text-align: center;
+    font-family: monospace;
 }
 
 .App header {
-    font-family: "Georgia", serif;
     min-height: 100vh;
     display: flex;
 }

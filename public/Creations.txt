@@ -1,0 +1,127 @@
+>>This Portfolio Website
+
+May 2024
+
+no pics
+
+Github Repo, https://github.com/JohnRob1/Portfolio.git
+
+Personal Project to showcase my passion and expertise in software engineering, while 
+presenting my personality as whole.
+-Technologies: React, Framer Motion, Javascript, HTML, CSS
+-Note: Click these tiles for more information!
+
+I started coding this website with a new design during my Spring 2024 semester at Purdue. With my
+internship starting in June, I've had this month of May to finish up, and really enjoyed the
+process. This was built using React in JavaScript from create-react-app, of which useState,
+useEffect, and useRef for the mouse effect and accordion animations were used. React components was
+just the step up from HTML/JS I needed for better extensibility and cleaner code, with vanilla CSS
+remaining surprisingly capable and clean.
+<<
+
+>>FinanceFriend
+
+Fall 2023
+
+ffDash, ffProf, ffLoca, ffSoca
+
+Github Repo, https://github.com/JohnRob1/FinanceFriend.git],
+Project Charter, https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS%20407%20Project%20Charter.pdf
+Design Doc, https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Design%20Doc.pdf
+Sprint 1 Plan, https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Sprint%201%20Planning%20Doc.pdf
+Sprint 1 Retrospective, https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Sprint%201%20Retrospective.pdf
+Sprint 2 Plan, https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Sprint%202%20Planning%20Doc.pdf
+Sprint 2 Retrospective, https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS%20407%20Sprint%202%20Retrospective.pdf
+Sprint 3 Plan, https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS407%20Sprint%203%20Planning%20Doc.pdf
+Sprint 3 Retrospective, https://github.com/JohnRob1/FinanceFriend/blob/main/docs/CS%20407%20Sprint%203%20Retrospective.pdf
+
+Senior Software Engineer Semester Project
+-Technologies: Flutter (Dart), Firebase, GoogleMaps API
+
+My and team and I created a fully-featured personal finance application, with the goal of learning
+new technologies while developing a feature-rich application. My contributions to this project
+were the below features:
+-Account creation
+-Profile management
+-Account dashboard
+-Expense input by location
+-Database management
+-Social media posts
+-Spending goal comments
+<<
+
+>>MediLingo
+
+October 2023
+
+mediCond, mediPath, mediQues, mediFeti
+
+Github Repo, https://github.com/JohnRob1/MediLingo
+DevPost, https://devpost.com/software/medilingo
+
+PittChallenge 2023 Hackathon entry
+-Technologies: TypeScript, React, Next.js, Vite, MongoDB Atlas
+
+My team and I's goal for this website was to educate people about common medical conditions. My
+contributions to this project are the graph component that represents game progress and multiple
+React components that my teammates were able to use in making the game. We won the  best use of
+MongoDb Atlas and the Health Literacy category.
+<<
+
+>>JudgeMe
+
+Fall 2022
+
+jComp, jHome, jTaste
+
+Github Repo, https://github.com/JohnRob1/JudgeMe
+Design Doc, https://github.com/JohnRob1/JudgeMe/blob/main/docs/Design_Document.pdf
+Backlog, https://github.com/JohnRob1/JudgeMe/blob/main/docs/Project_Backlog.pdf
+Charter, https://github.com/JohnRob1/JudgeMe/blob/main/docs/Project_Charter.pdf
+
+Software Engineering Class Semester Project
+-Technologies: Django Framework (Python), TailwindCSS, HTML, Javascript, SQLite
+
+For my Software Engineering Class Project at Purdue, my team and I built a web application using the
+Django framework (Python) and TailwindCSS. Using the Spotify API, users get feedback about their
+music taste and recommendations for new music. Where we got the name JudgeMe, however, is the
+comparison feature. We added social media features to allow users to compare their music taste
+with their friends. My contributions to this project involved creating Django templates for my
+teammates such as the playlist UI. The rest of my work was solely focused on the comparison
+features. Using research from Spotify on the link between music taste and personality, I developed
+an algorithm that uses your the genres of your favorite songs to tell you a little about what your
+music taste says about you!
+<<
+
+>>Lot Tracking Application in Java
+
+April 2022
+
+lMain, lFile, lOut, lGif
+
+Github Repo, https://github.com/JohnRob1/lot-tracker
+
+Personal Lot Number Tracking Project
+-Technologies: Java/JavaFX, Apache API
+
+Using the experience I got in Java from my Object Oriented Programming class, I wanted to solve a
+problem I was facing at my part-time position at Fisher Packing. We were writing all of the lot
+numbers of ingredients by hand, so I sped up the process with lot-tracker! This program reads the
+lot numbers from the recipe template that was used at Fisher Packing, and automatically fills it out
+from lot numbers that were used previously. No need to rewrite!
+<<
+
+>>Messaging Application
+
+Fall 2020
+
+p5Main
+
+Github Repo, https://github.com/JohnRob1/Project5
+
+Object Oriented Programming Final Project
+-Technologies: Java/JavaFX
+
+For this project, my team and I developed a full-stack Java application that allowed a user to send
+messages in groups. My contributions to this project were primarily the edit and delete
+functionalities of the messages, which was great training for client-server development.

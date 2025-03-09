@@ -8,22 +8,16 @@ import { ScreenWidth } from './Global.js';
 
 function ProfilePicture() {
     const profileStyle = {
-        width: (ScreenWidth() >= 650) ? '22vw' : '35vw',
+        width: ScreenWidth() >= 650 ? '22vw' : '35vw',
         borderRadius: '20px',
         marginInline: '2vw',
-        marginBlock: '15px'
-    }
+        marginBlock: '15px',
+    };
 
     return (
         <div>
-            <img
-                style={profileStyle}
-                src={ProfilePic}
-                alt="ProfilePic" />
-            <img
-                style={profileStyle}
-                src={WeddingPic}
-                alt="WeddingPic" />
+            <img style={profileStyle} src={ProfilePic} alt="ProfilePic" />
+            <img style={profileStyle} src={WeddingPic} alt="WeddingPic" />
         </div>
     );
 }
@@ -31,9 +25,8 @@ function ProfilePicture() {
 function Objective() {
     return (
         <p className={styles.objective}>
-            I'm a Senior in Computer Science at Purdue, concentrating
-            in Software Engineering. I love to program in order to solve
-            challenging problems, big or small!
+            I'm a Software Engineer at Wavelogix. I love to program in order to solve challenging
+            problems, big or small!
         </p>
     );
 }
@@ -44,16 +37,23 @@ function Contact() {
             <div className={styles.socialsContainer}>
                 <SocialIcon
                     style={{ height: 30, width: 30, margin: 5 }}
-                    url="mailto:jrobinson6114@gmail.com" />
+                    url="mailto:jrobinson6114@gmail.com"
+                />
                 <SocialIcon
                     style={{ height: 30, width: 30, margin: 5 }}
-                    url="https://www.linkedin.com/in/JohnRob1/" />
+                    url="https://www.linkedin.com/in/JohnRob1/"
+                />
                 <SocialIcon
                     style={{ height: 30, width: 30, margin: 5 }}
-                    url="https://github.com/JohnRob1" />
+                    url="https://github.com/JohnRob1"
+                />
             </div>
             <div className={styles.resume}>
-                <a className={global.link} href="https://drive.google.com/file/d/1bp0zU_qT8AbHO-fLRY76v_NsPJrxc-dn/view?usp=drive_link">Current Resume</a>
+                <a
+                    className={global.link}
+                    href="https://drive.google.com/file/d/1tQvS7RQAKWmjdgReeigW7UDB2_18od7O/view?usp=sharing">
+                    Current Resume
+                </a>
             </div>
         </>
     );
@@ -61,16 +61,11 @@ function Contact() {
 
 export default function About() {
     return (
-        <div className={styles.container} id='about'>
-            <div className={global.title}>
-                ABOUT ME
-            </div>
+        <div className={styles.container} id="about">
+            <div className={global.title}>ABOUT ME</div>
             <ProfilePicture />
             <Objective />
-            {ScreenWidth() < 650
-                ? <Skills />
-                : <></>
-            }
+            {ScreenWidth() < 650 ? <Skills /> : <></>}
             <Contact />
         </div>
     );

@@ -1,38 +1,79 @@
 import { useEffect, useState } from 'react';
 
-export { default as ffDash } from '../assets/FF_Dash.png';
-export { default as ffProf } from '../assets/FF_Profile.png';
-export { default as ffLoca } from '../assets/FF_Location.png';
-export { default as ffSoca } from '../assets/FF_Social.png';
-export { default as mediCond } from '../assets/medi_conditions.jpg';
-export { default as mediPath } from '../assets/medi_graph.jpg';
-export { default as mediQues } from '../assets/medi_question.jpg';
-export { default as mediFeti } from '../assets/medi_confetti.jpg';
-export { default as jComp } from '../assets/judgeme_compare.png';
-export { default as jHome } from '../assets/judgeme_home.png';
-export { default as jTaste } from '../assets/judgeme_music_taste.png';
-export { default as p5Main } from '../assets/P5MainWindow.png';
-export { default as lMain } from '../assets/lotTrackMain.png';
-export { default as lFile } from '../assets/lotTrackFile.png';
-export { default as lOut } from '../assets/lotTrackOut.png';
-export { default as lGif } from '../assets/lotTrackGif.gif';
-export { default as hWrestling } from '../assets/HAR_23_24_B_WR.jpg';
-export { default as dannarPic } from '../assets/dannarPic.jpg';
-export { default as fisherPic } from '../assets/fisherPic.png';
-export { default as baAlex } from '../assets/baAlex.JPEG';
-export { default as baFloat } from '../assets/baFloating.JPG';
-export { default as bmExpress } from '../assets/BoilermakerExpress.JPG';
-export { default as purdueCS } from '../assets/purdue_cs.png';
-export { default as dannarMPS } from '../assets/DANNAR-MPS.jpg';
+const Images = {
+    ffDash: require('../assets/FF_Dash.png'),
+    ffProf: require('../assets/FF_Profile.png'),
+    ffLoca: require('../assets/FF_Location.png'),
+    ffSoca: require('../assets/FF_Social.png'),
+    mediCond: require('../assets/medi_conditions.jpg'),
+    mediPath: require('../assets/medi_graph.jpg'),
+    mediQues: require('../assets/medi_question.jpg'),
+    mediFeti: require('../assets/medi_confetti.jpg'),
+    jComp: require('../assets/judgeme_compare.png'),
+    jHome: require('../assets/judgeme_home.png'),
+    jTaste: require('../assets/judgeme_music_taste.png'),
+    p5Main: require('../assets/P5MainWindow.png'),
+    lMain: require('../assets/lotTrackMain.png'),
+    lFile: require('../assets/lotTrackFile.png'),
+    lOut: require('../assets/lotTrackOut.png'),
+    lGif: require('../assets/lotTrackGif.gif'),
+    hWrestling: require('../assets/HAR_23_24_B_WR.jpg'),
+    dannarPic: require('../assets/dannarPic.jpg'),
+    fisherPic: require('../assets/fisherPic.png'),
+    baAlex: require('../assets/baAlex.JPEG'),
+    baFloat: require('../assets/baFloating.JPG'),
+    bmExpress: require('../assets/BoilermakerExpress.JPG'),
+    purdueCS: require('../assets/purdue_cs.png'),
+    dannarMPS: require('../assets/DANNAR-MPS.jpg'),
+    wxRebel: require('../assets/wxRebel.jpg'),
+    wxDashboard: require('../assets/wxDashboard.png'),
+};
+
+export default Images;
+
 export function ScreenWidth() {
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return width;
 }
 
+export function formatContent(content) {
+    const pattern = />>(.+?)<<|>>(.*?$)/gs;
+    let matches = {};
+    let index = 0;
+    let match;
+
+    while ((match = pattern.exec(content)) !== null) {
+        const text = (match[1] !== undefined ? match[1] : match[2]).split('\n\n');
+        if (!text) break;
+
+        matches = {
+            ...matches,
+            [text[0]]: {
+                key: index++,
+                date: text[1],
+                mainDesc: text[4].replace(/\n(?!-)/g, ' '),
+                moreDesc: text
+                    .splice(5)
+                    .map(desc => desc.replace(/\n(?!-)/g, ' '))
+                    .join('\n\n'),
+            },
+        };
+
+        if (text[2] !== 'no pics')
+            Object.assign(matches[text[0]], { pics: text[2].split(', ').map(img => Images[img]) });
+
+        if (text[3] !== 'no links')
+            Object.assign(matches[text[0]], {
+                links: text[3].split('\n').map(link => link.split(', ')),
+            });
+    }
+
+    return matches;
+}

@@ -2,8 +2,7 @@ import './App.css';
 import CustomCursor from './components/CustomCursor';
 import Home from './components/Home.js';
 import About from './components/About.js';
-import Creations from './components/Creations.js';
-import Experiences from './components/Experiences.js';
+import Content from './components/Content';
 
 function App() {
     return (
@@ -13,8 +12,7 @@ function App() {
                 <section>
                     <div className="content">
                         <About />
-                        <Experiences />
-                        <Creations />
+                        <Content />
                     </div>
                     <Home />
                 </section>

@@ -101,6 +101,8 @@
         align-self: center;
         height: auto;
         display: flex;
+        padding: 0px;
+        margin: 0px;
     }
 
     .nav li {
