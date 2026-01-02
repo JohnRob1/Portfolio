@@ -1,16 +1,24 @@
 # -----------------------------------------------------------------------------
+# Data Sources
+# -----------------------------------------------------------------------------
+
+data "aws_caller_identity" "current" {}
+data "aws_region" "current" {}
+
+# -----------------------------------------------------------------------------
 # IAM User
 # -----------------------------------------------------------------------------
 
 resource "aws_iam_user" "john_dev" {
-  name = "john.robinson"
-  path = "/developers/"
+  name = var.user_name
+  path = var.user_path
 
   tags = {
-    Name        = "John Robinson - Developer"
+    Name        = var.user_display_name
     Purpose     = "Personal development account"
     CreatedBy   = "Terraform"
-    Environment = "all"
+    Environment = var.environment
+    Project     = var.project_name
   }
 }
 
@@ -38,6 +46,11 @@ resource "aws_iam_user_login_profile" "john_dev" {
 
 resource "aws_iam_access_key" "john_dev" {
   user = aws_iam_user.john_dev.name
+
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes        = all
+  }
 }
 
 # -----------------------------------------------------------------------------
