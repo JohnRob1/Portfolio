@@ -32,4 +32,19 @@ if (glow && window.matchMedia('(hover: hover)').matches) {
     glow.style.left = e.clientX + 'px';
     glow.style.top = e.clientY + 'px';
   });
+
+  // Track hoverable elements
+  const hoverableSelectors = 'a, button, .tile-header, [role="button"]';
+  
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(hoverableSelectors)) {
+      glow.classList.add('hovering');
+    }
+  });
+  
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(hoverableSelectors)) {
+      glow.classList.remove('hovering');
+    }
+  });
 }
