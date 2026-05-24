@@ -1,0 +1,25 @@
+:root {
+  --primary: #020f14;
+  --secondary: #677189;
+  --tertiary: #e2e2e2;
+  --accent: #bd7418;
+
+  --tile-padding: 12px 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: monospace;
+  background-color: var(--primary);
+  color: var(--tertiary);
+  min-height: 100vh;
+}

@@ -1,0 +1,75 @@
+/* About */
+.about {
+  padding-top: 10px;
+}
+
+.about-inner {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+@media (max-width: 700px) {
+  .about-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.about-photos {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.about-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--secondary);
+}
+
+@media (max-width: 700px) {
+  .about-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--tertiary);
+}
+
+.about-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-link {
+  color: var(--secondary);
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: var(--accent);
+}
+
+.resume-link {
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.resume-link:hover {
+  background-color: var(--accent);
+  color: var(--primary);
+}

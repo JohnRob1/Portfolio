@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Robinson | Software Engineer</title>
+  
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/base.css">
+  <link rel="stylesheet" href="/layout.css">
+  <link rel="stylesheet" href="/cursor-glow.css">
+  <link rel="stylesheet" href="/portfolio-header.css">
+  
+  <!-- Portfolio Specific CSS -->
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="sections.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="skills.css">
+  <link rel="stylesheet" href="sidebar-and-tiles.css">
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+
+  <cursor-glow></cursor-glow>
+  <portfolio-header></portfolio-header>
+
+  <div class="layout">
+    <main class="content">
+      <section id="about" class="about">
+        <content-section src="about.html"></content-section>
+      </section>
+
+      <section id="experiences">
+        <content-section src="experiences.html"></content-section>
+      </section>
+
+      <section id="creations">
+        <content-section src="creations.html"></content-section>
+      </section>
+    </main>
+
+    <portfolio-sidebar></portfolio-sidebar>
+  </div>
+
+  <!-- Shared Components -->
+  <script src="/cursor-glow.js"></script>
+  <script src="/portfolio-header.js"></script>
+  
+  <!-- Site Specific Components -->
+  <script src="content-section.js"></script>
+  <script src="portfolio-tile.js"></script>
+  <script src="portfolio-sidebar.js"></script>
+</body>
+
+</html>

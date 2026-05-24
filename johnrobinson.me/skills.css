@@ -1,0 +1,23 @@
+/* Skills grid (inside tile) */
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.skill-name {
+  color: var(--tertiary);
+}
+
+.dots {
+  color: var(--accent);
+  letter-spacing: 3px;
+  font-size: 1rem;
+}

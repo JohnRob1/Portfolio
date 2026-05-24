@@ -1,0 +1,22 @@
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  position: sticky;
+  top: 80px; /* Below the fixed header */
+  height: calc(100vh - 80px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    position: static;
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+  }
+}
