@@ -22,9 +22,16 @@ locals {
   }
 }
 
-data "aws_route53_zone" "main" {
-  name         = "${var.base_domain}."
-  private_zone = false
+data "aws_cloudfront_distribution" "main_site" {
+  id = var.main_cloudfront_distribution_id
+}
+
+data "aws_cloudfront_distribution" "prod_site" {
+  id = var.prod_cloudfront_distribution_id
+}
+
+data "aws_cloudfront_distribution" "assets_site" {
+  id = var.assets_cloudfront_distribution_id
 }
 
 module "github_deploy_role" {
@@ -45,97 +52,97 @@ module "github_deploy_role" {
   tags = local.common_tags
 }
 
-resource "aws_iam_policy" "cloudfront_invalidation" {
-  name        = "${var.github_deploy_role_name}-cloudfront-invalidation"
-  description = "Allow CloudFront invalidation for GitHub Actions"
+resource "aws_s3_bucket_policy" "main_site" {
+  bucket = local.domain_name
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
-        Action   = "cloudfront:CreateInvalidation"
-        Effect   = "Allow"
-        Resource = "*"
+        Sid       = "AllowLiveCloudFrontOACReadOnly"
+        Effect    = "Allow"
+        Principal = { Service = "cloudfront.amazonaws.com" }
+        Action    = "s3:GetObject"
+        Resource  = "arn:aws:s3:::${local.domain_name}/*"
+        Condition = {
+          StringEquals = {
+            "AWS:SourceArn" = "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${var.main_cloudfront_distribution_id}"
+          }
+        }
+      },
+      {
+        Sid       = "ForceSSLOnlyAccess"
+        Effect    = "Deny"
+        Principal = "*"
+        Action    = "s3:*"
+        Resource  = ["arn:aws:s3:::${local.domain_name}", "arn:aws:s3:::${local.domain_name}/*"]
+        Condition = { Bool = { "aws:SecureTransport" = "false" } }
       }
     ]
   })
 }
 
-module "main_site_cdn" {
-  source  = "cloudposse/cloudfront-s3-cdn/aws"
-  version = "0.95.0"
-
-  namespace = var.project_name
-  stage     = var.environment
-  name      = "site"
-
-  origin_bucket = local.domain_name
-
-  parent_zone_id      = data.aws_route53_zone.main.zone_id
-  dns_alias_enabled   = true
-  aliases             = [local.domain_name]
-  acm_certificate_arn = module.main_site_ssl.acm_certificate_arn
-
-  # CloudPosse module handles S3 bucket and CloudFront distribution
-  s3_access_logging_enabled = false
-  cloudfront_access_logging_enabled = false
-  origin_force_destroy = true
-
-  tags = local.common_tags
-  }
-
-# CloudPosse module doesn't automatically create certificates across regions easily 
-# if we want them in us-east-1 for CloudFront. Using terraform-aws-modules/acm/aws for SSL.
-module "main_site_ssl" {
-  source  = "terraform-aws-modules/acm/aws"
-  version = "~> 5.0"
-
-  domain_name = local.domain_name
-  zone_id     = data.aws_route53_zone.main.zone_id
-
-  validation_method = "DNS"
-
-  # CloudFront requires certificates in us-east-1
-  providers = {
-    aws = aws
-  }
-
-  tags = local.common_tags
+resource "aws_s3_bucket_policy" "assets_site" {
+  bucket = local.assets_domain_name
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid       = "S3GetObjectForCloudFront"
+        Effect    = "Allow"
+        Principal = { AWS = "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${var.assets_origin_access_identity_id}" }
+        Action    = "s3:GetObject"
+        Resource  = "arn:aws:s3:::${local.assets_domain_name}/*"
+      },
+      {
+        Sid       = "S3ListBucketForCloudFront"
+        Effect    = "Allow"
+        Principal = { AWS = "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity ${var.assets_origin_access_identity_id}" }
+        Action    = "s3:ListBucket"
+        Resource  = "arn:aws:s3:::${local.assets_domain_name}"
+      },
+      {
+        Sid       = "ForceSSLOnlyAccess"
+        Effect    = "Deny"
+        Principal = "*"
+        Action    = "s3:*"
+        Resource  = ["arn:aws:s3:::${local.assets_domain_name}", "arn:aws:s3:::${local.assets_domain_name}/*"]
+        Condition = { Bool = { "aws:SecureTransport" = "false" } }
+      }
+    ]
+  })
 }
 
-module "assets_site_cdn" {
-  source  = "cloudposse/cloudfront-s3-cdn/aws"
-  version = "0.95.0"
+resource "aws_s3_bucket_public_access_block" "main_site" {
+  bucket                  = local.domain_name
+  block_public_acls       = true
+  block_public_policy     = false
+  ignore_public_acls      = true
+  restrict_public_buckets = false
+}
 
-  namespace = var.project_name
-  stage     = var.environment
-  name      = "assets"
+resource "aws_s3_bucket_public_access_block" "assets_site" {
+  bucket                  = local.assets_domain_name
+  block_public_acls       = true
+  block_public_policy     = false
+  ignore_public_acls      = true
+  restrict_public_buckets = false
+}
 
-  origin_bucket = local.assets_domain_name
+data "aws_caller_identity" "current" {}
 
-  parent_zone_id      = data.aws_route53_zone.main.zone_id
-  dns_alias_enabled   = true
-  aliases             = [local.assets_domain_name]
-  acm_certificate_arn = module.assets_site_ssl.acm_certificate_arn
-
-  s3_access_logging_enabled = false
-  cloudfront_access_logging_enabled = false
-  origin_force_destroy = true
-
-  tags = local.common_tags
-  }
-
-module "assets_site_ssl" {
-  source  = "terraform-aws-modules/acm/aws"
-  version = "~> 5.0"
-
-  domain_name = local.assets_domain_name
-  zone_id     = data.aws_route53_zone.main.zone_id
-
-  validation_method = "DNS"
-
-  providers = {
-    aws = aws
-  }
-
-  tags = local.common_tags
+resource "aws_iam_policy" "cloudfront_invalidation" {
+  name        = "${var.github_deploy_role_name}-cloudfront-invalidation"
+  description = "Allow CloudFront invalidation for GitHub Actions"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action   = "cloudfront:CreateInvalidation"
+      Effect   = "Allow"
+      Resource = [
+        data.aws_cloudfront_distribution.main_site.arn,
+        data.aws_cloudfront_distribution.prod_site.arn,
+        data.aws_cloudfront_distribution.assets_site.arn,
+      ]
+    }]
+  })
 }

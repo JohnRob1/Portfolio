@@ -3,6 +3,11 @@ set -e
 
 ENV="${1:-dev}"
 
+case "$ENV" in
+  dev|prod) ;;
+  *) echo "Usage: $0 [dev|prod]" >&2; exit 2 ;;
+esac
+
 # Try to get values from Terraform outputs if available
 if [ -d "infra" ]; then
   echo "Fetching infrastructure values from Terraform..."
@@ -11,8 +16,13 @@ if [ -d "infra" ]; then
   
   # Extract values using jq if available, otherwise fallback to hardcoded
   if command -v jq >/dev/null 2>&1; then
-    BUCKET=$(echo "$TERRAFORM_OUT" | jq -r '.s3_bucket_name.value')
-    CF_DIST_ID=$(echo "$TERRAFORM_OUT" | jq -r '.cloudfront_distribution_id.value')
+    if [ "$ENV" = "prod" ]; then
+      BUCKET=$(echo "$TERRAFORM_OUT" | jq -r '.prod_s3_bucket_name.value')
+      CF_DIST_ID=$(echo "$TERRAFORM_OUT" | jq -r '.prod_cloudfront_distribution_id.value')
+    else
+      BUCKET=$(echo "$TERRAFORM_OUT" | jq -r '.s3_bucket_name.value')
+      CF_DIST_ID=$(echo "$TERRAFORM_OUT" | jq -r '.cloudfront_distribution_id.value')
+    fi
     ASSETS_BUCKET=$(echo "$TERRAFORM_OUT" | jq -r '.assets_s3_bucket_name.value')
     ASSETS_CF_DIST_ID=$(echo "$TERRAFORM_OUT" | jq -r '.assets_cloudfront_distribution_id.value')
   fi

@@ -15,7 +15,7 @@ variable "environment" {
 }
 
 variable "base_domain" {
-  description = "Base domain for Route53"
+  description = "Base domain managed in Cloudflare"
   type        = string
 }
 
@@ -40,7 +40,22 @@ variable "github_deploy_role_name" {
   type        = string
 }
 
-variable "github_actions_oidc_provider_arn" {
-  description = "ARN of the GitHub Actions OIDC provider"
+variable "main_cloudfront_distribution_id" {
+  description = "Existing CloudFront distribution for the dev site"
+  type        = string
+}
+
+variable "prod_cloudfront_distribution_id" {
+  description = "Existing CloudFront distribution for the production site"
+  type        = string
+}
+
+variable "assets_cloudfront_distribution_id" {
+  description = "Existing CloudFront distribution for site assets"
+  type        = string
+}
+
+variable "assets_origin_access_identity_id" {
+  description = "Existing CloudFront OAI used by the assets distribution"
   type        = string
 }
